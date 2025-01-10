@@ -1,15 +1,22 @@
-/* Updated Sidebar Styling */
+
+/* 這是調整整個頁面左邊navbar以及右邊content的排版 */
+.main-layout {
+    display: flex; /* 設定為 Flexbox 水平佈局 */
+    height: 100vh; /* 讓容器高度佔滿視窗 */
+}
+
+/* 這是調整左邊navbar */
 .navbar {
     display: flex;
     flex-direction: column; /* 垂直佈局 */
     align-items: flex-start; /* 左對齊 */
     padding: 50px; /* 高50px、寬50px */
     width: 250px; /* 固定寬度 */
-    height: 100vh; /* 高度佔滿視窗 */
+    height: 100%; /* 高度佔滿父容器 */
     background-color: white; /* 背景色 */
     color: black; /* 字體顏色 */
     gap: 50px; /* 自動分配垂直間距 */
-    box-sizing: border-box; /* 包含內邊距在寬高計算中 */
+    box-sizing: border-box; /* 包含 padding 在寬高計算中 */
     overflow-y: auto; /* 若內容超出，允許滾動 */
 }
 
@@ -86,4 +93,12 @@
     max-height: 50px; /* 最大高度限制為 50px，避免過大 */
     object-fit: contain; /* 確保圖片適配比例 */
     cursor: pointer;
+}
+
+/* 這是調整右邊content */
+.content-main-page {
+    flex: 1; /* 自動佔滿剩餘空間 */
+    padding: 20px; /* 增加內邊距 */
+    background-color: #f9f9f9; /* 淡灰色背景 */
+    overflow-y: auto; /* 如果內容超出，允許垂直滾動 */
 }
