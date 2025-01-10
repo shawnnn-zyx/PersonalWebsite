@@ -1,26 +1,32 @@
-/* Sidebar Styling */
-.sidebar {
+/* Updated Sidebar Styling */
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 250px;
+    height: 100vh;
     background-color: #333;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
-    font-family: Arial, sans-serif;
 }
 
-.sidebar-title {
-    font-size: 20px;
+.name-title {
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.menu {
-    list-style-type: none;
+.sidebar {
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.menu-item {
+.sidebar-item {
     margin-bottom: 15px;
 }
 
@@ -30,10 +36,10 @@
     color: white;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
     text-align: left;
     padding: 10px 0;
     transition: background 0.3s;
+    width: 100%;
 }
 
 .dropdown-btn:hover {
@@ -41,11 +47,10 @@
 }
 
 .dropdown {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: none; /* Initially hidden */
-    padding-left: 15px;
+    list-style: none;
+    margin-top: 5px;
+    display: none;
+    padding-left: 10px;
 }
 
 .dropdown a {
@@ -53,16 +58,12 @@
     text-decoration: none;
     font-size: 14px;
     display: block;
-    padding: 5px 0;
-}
-
-.dropdown a:hover {
-    text-decoration: underline;
+    margin: 5px 0;
 }
 
 .icons {
-    margin-top: 20px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .icons img {
@@ -74,5 +75,5 @@
 }
 
 .icons img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }

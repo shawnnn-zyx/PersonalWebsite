@@ -1,18 +1,16 @@
-/* Main Content Styles */
+/* Updated Main Content */
 .content-main-page {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    margin-left: 270px; /* Space for the sidebar */
     padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
 }
 
-/* Individual Project Box */
+/* Project Box */
 .project-origin {
     position: relative;
-    width: 300px;
-    height: 300px;
-    background-color: #f5f5f5;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -23,46 +21,33 @@
     transform: scale(1.05);
 }
 
-/* Project Image */
 .project-image {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
-    display: block;
 }
 
-/* Project Details Overlay */
 .project-details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
     padding: 10px;
-    text-align: left;
+    background: #333;
+    color: white;
 }
 
-/* Project Title */
 .project-title {
     font-size: 18px;
-    font-weight: 600;
     margin-bottom: 5px;
 }
 
-/* Tags */
 .project-tags {
     display: flex;
-    gap: 8px;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
 .tag {
-    background: black;
+    background: #444;
     color: white;
-    padding: 4px 8px;
+    padding: 5px;
     border-radius: 4px;
     font-size: 12px;
-    font-family: "Blinker", sans-serif;
-    line-height: 18px;
 }
