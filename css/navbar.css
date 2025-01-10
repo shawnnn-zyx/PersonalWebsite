@@ -1,10 +1,3 @@
-
-/* 這是調整整個頁面左邊navbar以及右邊content的排版 */
-.main-layout {
-    display: row; /* 設定為 Flexbox 水平佈局 */
-    height: 100vh; /* 讓容器高度佔滿視窗 */
-}
-
 /* 這是調整左邊navbar */
 .navbar {
     display: flex;
@@ -25,9 +18,8 @@
     align-items: center; /* 垂直居中 */
     gap: auto; /* 自動水平間距 */
     padding: 0; /* 無內邊距 */
-    font-size: 24; /* 字體大小 */
-    font-family: "Blinker", sans-serif;
-    font-weight: bold;
+    font-size: 26; /* 字體大小 */
+    font-family: "Bungee", sans-serif;
 }
 
 .sidebar {
@@ -93,12 +85,4 @@
     max-height: 50px; /* 最大高度限制為 50px，避免過大 */
     object-fit: contain; /* 確保圖片適配比例 */
     cursor: pointer;
-}
-
-/* 這是調整右邊content */
-.content-main-page {
-    flex: 1; /* 自動佔滿剩餘空間 */
-    padding: 20px; /* 增加內邊距 */
-    background-color: #f9f9f9; /* 淡灰色背景 */
-    overflow-y: auto; /* 如果內容超出，允許垂直滾動 */
 }
