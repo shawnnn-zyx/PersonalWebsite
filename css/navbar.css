@@ -14,12 +14,15 @@
 }
 
 .name-title {
+    width: auto; /* 自動寬度 */
+    height: auto; /* 自動高度 */
+    max-width: 100%; /* 不超過父容器寬度 */
     display: flex; /* 水平佈局 */
     align-items: center; /* 垂直居中 */
     gap: auto; /* 自動水平間距 */
     padding: 0; /* 無內邊距 */
-    font-size: 28px; /* 字體大小 */
-    font-family: "Bungee", sans-serif;
+    font-size: auto; /* 字體大小 */
+    font-family: "Blinker", sans-serif;
 }
 
 .sidebar {
