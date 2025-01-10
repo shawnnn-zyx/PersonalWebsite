@@ -1,0 +1,11 @@
+.content-project-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-project-page img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+}

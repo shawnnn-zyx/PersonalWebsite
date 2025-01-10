@@ -1,54 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script type="text/javascript" src="https://p5livemedia.itp.io/simplepeer.min.js"></script>
-	<script type="text/javascript" src="https://p5livemedia.itp.io/socket.io.js"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-    <script type="text/javascript" src="https://p5livemedia.itp.io/p5livemedia.js"></script>    
-    <link rel="icon" type="image/png" href="https://nasif.co/favicon.png">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <title>你好 Hello! ¡Hola mundo!</title>
-  </head>
-  <body>
-    <script src="background.js"></script>
-  <!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawn Zheng</title>
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="name-title">Shawn Zheng</div>
+        <ul class="sidebar">
+            <li><a href="#game">Game</a></li>
+            <li><a href="#future">Future</a></li>
+            <li><a href="#storytelling">Storytelling</a></li>
+            <li><a href="#website">Website</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="icons">
+            <a href="mailto:yz10947@nyu.edu"><img src="assets/icon/email.png" alt="Email"></a>
+            <a href="https://www.instagram.com/shawn60809/" target="_blank"><img src="assets/icon/instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/shawnzyx/" target="_blank"><img src="assets/icon/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-main-page">
+        <div class="project-origin">
+            <img class="project-image" src="assets/img/Project_shopping_maniac.jpg" alt="Shopping Maniac">
+            <div class="project-details">
+                <div class="project-title">Shopping Maniac</div>
+                <div class="project-tags">
+                    <span class="tag">Interactive Game</span>
+                    <span class="tag">Unity</span>
+                    <span class="tag">Arduino</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-origin">
+            <img class="project-image" src="assets/img/Project_Afterlife.jpg" alt="Afterlife">
+            <div class="project-details">
+                <div class="project-title">Afterlife</div>
+                <div class="project-tags">
+                    <span class="tag">Speculative Future</span>
+                    <span class="tag">UE5</span>
+                    <span class="tag">Architecture</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-origin">
+            <img class="project-image" src="assets/img/Project_The Great Exploration.jpg" alt="The Great Exploration">
+            <div class="project-details">
+                <div class="project-title">The Great Exploration</div>
+                <div class="project-tags">
+                    <span class="tag">Runway</span>
+                    <span class="tag">Storytelling</span>
+                    <span class="tag">Adobe Premiere</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-origin">
+            <img class="project-image" src="assets/img/Project_Songs-of-My-Life.jpg" alt="Songs of My Life">
+            <div class="project-details">
+                <div class="project-title">Songs of My Life</div>
+                <div class="project-tags">
+                    <span class="tag">Maya</span>
+                    <span class="tag">Unity</span>
+                    <span class="tag">Storytelling</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-origin">
+            <img class="project-image" src="assets/img/Project_KingdomClash.jpg" alt="KingdomClash">
+            <div class="project-details">
+                <div class="project-title">KingdomClash</div>
+                <div class="project-tags">
+                    <span class="tag">Game Level Design</span>
+                    <span class="tag">User Research</span>
+                    <span class="tag">Marketing</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-origin">
+            <img class="project-image" src="assets/img/Project_HuaWooDiary.jpg" alt="HuaWoo Diary">
+            <div class="project-details">
+                <div class="project-title">HuaWoo Diary</div>
+                <div class="project-tags">
+                    <span class="tag">Website Design</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">CRM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add other projects in similar structure -->
+        <div class="about-summary">
+            <p>
+Shawn Zheng is an interaction designer and digital marketing strategist with seven years of experience in the gaming industry, blending creative technology with storytelling. He is currently pursuing a Master’s at NYU's Interactive Telecommunications Program, focusing on exploring interactions between virtual and real worlds.
+
+See you in the near future.
+            </p>
+        </div>
+    </div>
 </body>
 </html>
