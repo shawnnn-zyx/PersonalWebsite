@@ -1,0 +1,78 @@
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 15px;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    transition: background 0.3s;
+}
+
+.dropdown-btn:hover {
+    background-color: #444;
+}
+
+.dropdown {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Initially hidden */
+    padding-left: 15px;
+}
+
+.dropdown a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 5px 0;
+}
+
+.dropdown a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
