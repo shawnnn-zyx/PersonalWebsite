@@ -1,7 +1,7 @@
 
 /* 這是調整整個頁面左邊navbar以及右邊content的排版 */
 .main-layout {
-    display: flex; /* 設定為 Flexbox 水平佈局 */
+    display: row; /* 設定為 Flexbox 水平佈局 */
     height: 100vh; /* 讓容器高度佔滿視窗 */
 }
 
