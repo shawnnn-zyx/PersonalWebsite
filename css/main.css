@@ -1,11 +1,14 @@
 /* Updated Main Content */
 .content-main-page {
     margin-left: 270px; /* Space for the sidebar */
-    padding: 20px;
+    padding: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 50px;
     align-items: start;
+    flex: 1; /* 自動佔滿剩餘空間 */
+    background-color: white; /* 背景色 */
+    overflow-y: auto; /* 如果內容超出，允許垂直滾動 */
 }
 
 /* Project Box */
