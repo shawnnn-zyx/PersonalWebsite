@@ -1,8 +1,7 @@
 /* Updated Main Content */
 .content-main-page {
-    margin-left: 270px; /* Space for the sidebar */
     padding: 50px;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
     align-items: start;
