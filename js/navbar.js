@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+    const dropdownBtns = document.querySelectorAll(".dropdown-btn");
 
-  dropdownBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-          const dropdown = btn.nextElementSibling;
+    dropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const dropdown = btn.nextElementSibling;
 
-          // Toggle dropdown visibility
-          if (dropdown.style.display === "block") {
-              dropdown.style.display = "none";
-          } else {
-              dropdown.style.display = "block";
-          }
-      });
-  });
+            // Check if the next sibling is the dropdown and toggle its display
+            if (dropdown && dropdown.classList.contains("dropdown")) {
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            }
+        });
+    });
 });

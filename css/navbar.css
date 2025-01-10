@@ -60,12 +60,12 @@
     text-decoration: underline;
 }
 
-.social-icons {
+.icons {
     margin-top: 20px;
     text-align: center;
 }
 
-.social-icons img {
+.icons img {
     width: 24px;
     height: 24px;
     margin: 0 10px;
@@ -73,6 +73,6 @@
     transition: transform 0.3s;
 }
 
-.social-icons img:hover {
+.icons img:hover {
     transform: scale(1.2);
 }
