@@ -1,11 +1,11 @@
 /* Updated Main Content */
 .content-main-page {
+    flex: 1; /* 自動佔滿剩餘空間 */
     padding: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
     align-items: start;
-    flex: 1; /* 自動佔滿剩餘空間 */
     background-color: white; /* 背景色 */
     overflow-y: auto; /* 如果內容超出，允許垂直滾動 */
 }
