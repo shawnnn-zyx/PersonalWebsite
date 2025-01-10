@@ -18,9 +18,8 @@
     align-items: center; /* 垂直居中 */
     gap: auto; /* 自動水平間距 */
     padding: 0; /* 無內邊距 */
-    font-size: 24px; /* 字體大小 */
-    font-weight: bold; /* 加粗字體 */
-    font-family: "Blinker", sans-serif;
+    font-size: 28px; /* 字體大小 */
+    font-family: "Bungee", sans-serif;
 }
 
 .sidebar {
@@ -30,17 +29,20 @@
     gap: 10px; /* 垂直間距為 10px */
     padding: 0; /* 無內邊距 */
     margin: 0;
+    font-size: 18px; /* 字體大小 */
+    font-family: "Blinker", sans-serif;
 }
 
 .sidebar-item {
     margin-bottom: 15px;
+    font-size: 18px; /* 字體大小 */
+    font-family: "Blinker", sans-serif;
 }
 
 .dropdown-btn {
     background: none;
     border: none;
     color: black;
-    font-size: 16px;
     cursor: pointer;
     text-align: left;
     padding: 10px 0;
@@ -69,7 +71,7 @@
     align-items: flex-end; /* 靠底部對齊 */
     padding: 0; /* 移除內邊距，依靠 navbar 的 padding 設置 */
     margin-top: auto; /* 將 icons 推到底部 */
-    gap: 10px; /* icon 之間的間距 */
+    gap: 20px; /* icon 之間的間距 */
 }
 
 .icons img {
