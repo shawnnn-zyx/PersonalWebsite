@@ -12,7 +12,7 @@
     align-items: flex-start; /* 左對齊 */
     padding: 50px; /* 高50px、寬50px */
     width: 250px; /* 固定寬度 */
-    height: 100%; /* 高度佔滿父容器 */
+    height: 100vh; /* 讓容器高度佔滿視窗 */
     background-color: white; /* 背景色 */
     color: black; /* 字體顏色 */
     gap: 50px; /* 自動分配垂直間距 */
