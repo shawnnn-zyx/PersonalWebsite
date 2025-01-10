@@ -1,7 +1,7 @@
 /* Updated Main Content */
 .content-main-page {
     padding: 50px;
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
     align-items: start;
