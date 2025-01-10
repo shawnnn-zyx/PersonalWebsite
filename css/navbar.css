@@ -1,28 +1,33 @@
 /* Updated Sidebar Styling */
 .navbar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: #333;
-    color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: column; /* 垂直佈局 */
+    align-items: flex-start; /* 左對齊 */
+    padding: 50px; /* 高50px、寬50px */
+    width: 250px; /* 固定寬度 */
+    height: 100vh; /* 高度佔滿視窗 */
+    background-color: #333; /* 背景色 */
+    color: white; /* 字體顏色 */
+    gap: auto; /* 自動分配垂直間距 */
+    box-sizing: border-box; /* 包含內邊距在寬高計算中 */
+    overflow-y: auto; /* 若內容超出，允許滾動 */
 }
 
 .name-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+    display: flex; /* 水平佈局 */
+    align-items: center; /* 垂直居中 */
+    gap: auto; /* 自動水平間距 */
+    padding: 0; /* 無內邊距 */
+    font-size: 24px; /* 字體大小 */
+    font-weight: bold; /* 加粗字體 */
 }
 
 .sidebar {
     list-style: none;
-    padding: 0;
+    flex-direction: column; /* 垂直排列 */
+    align-items: flex-start; /* 左對齊 */
+    gap: 10px; /* 垂直間距為 10px */
+    padding: 0; /* 無內邊距 */
     margin: 0;
 }
 
