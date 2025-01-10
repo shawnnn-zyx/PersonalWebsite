@@ -64,14 +64,19 @@
 }
 
 .icons {
-    text-align: center;
-    margin-top: 20px;
+    display: flex; /* 使用 Flexbox 排列 */
+    justify-content: flex-start; /* 靠左對齊 */
+    align-items: flex-end; /* 靠底部對齊 */
+    padding: 0; /* 移除內邊距，依靠 navbar 的 padding 設置 */
+    margin-top: auto; /* 將 icons 推到底部 */
+    gap: 10px; /* icon 之間的間距 */
 }
 
 .icons img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
+    width: auto; /* 自動寬度 */
+    height: auto; /* 自動高度 */
+    max-width: 100%; /* 不超過父容器寬度 */
+    max-height: 50px; /* 最大高度限制為 50px，避免過大 */
+    object-fit: contain; /* 確保圖片適配比例 */
     cursor: pointer;
-    transition: transform 0.3s;
 }
