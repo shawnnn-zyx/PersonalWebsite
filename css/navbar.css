@@ -8,7 +8,7 @@
     height: 100vh; /* 高度佔滿視窗 */
     background-color: white; /* 背景色 */
     color: black; /* 字體顏色 */
-    gap: auto; /* 自動分配垂直間距 */
+    gap: 50px; /* 自動分配垂直間距 */
     box-sizing: border-box; /* 包含內邊距在寬高計算中 */
     overflow-y: auto; /* 若內容超出，允許滾動 */
 }
@@ -56,6 +56,10 @@
     margin-top: 5px;
     display: none;
     padding-left: 10px;
+}
+
+.dropdown.active {
+    display: block; /* 當展開時顯示 */
 }
 
 .dropdown a {

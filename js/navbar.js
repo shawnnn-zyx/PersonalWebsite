@@ -3,11 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dropdownBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            const dropdown = btn.nextElementSibling;
+            const parent = btn.parentElement; // 找到當前的 sidebar-item
+            const currentDropdown = parent.querySelector(".dropdown"); // 當前的 dropdown
 
-            // Check if the next sibling is the dropdown and toggle its display
-            if (dropdown && dropdown.classList.contains("dropdown")) {
-                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            // 收合其他展開的 dropdown
+            document.querySelectorAll(".dropdown").forEach((dropdown) => {
+                if (dropdown !== currentDropdown) {
+                    dropdown.style.display = "none"; // 收起其他 dropdown
+                }
+            });
+
+            // 切換當前 dropdown 的展開/收合狀態
+            if (currentDropdown) {
+                currentDropdown.style.display =
+                    currentDropdown.style.display === "block" ? "none" : "block";
             }
         });
     });
