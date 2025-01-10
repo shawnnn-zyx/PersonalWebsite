@@ -6,8 +6,8 @@
     padding: 50px; /* 高50px、寬50px */
     width: 250px; /* 固定寬度 */
     height: 100vh; /* 高度佔滿視窗 */
-    background-color: #333; /* 背景色 */
-    color: white; /* 字體顏色 */
+    background-color: white; /* 背景色 */
+    color: black; /* 字體顏色 */
     gap: auto; /* 自動分配垂直間距 */
     box-sizing: border-box; /* 包含內邊距在寬高計算中 */
     overflow-y: auto; /* 若內容超出，允許滾動 */
@@ -20,6 +20,7 @@
     padding: 0; /* 無內邊距 */
     font-size: 24px; /* 字體大小 */
     font-weight: bold; /* 加粗字體 */
+    font-family: "Blinker", sans-serif;
 }
 
 .sidebar {
