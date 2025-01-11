@@ -1,7 +1,7 @@
 /* Updated Main Content */
 .content-main-page {
     display: grid;
-    grid-template-columns: repeat(300px 300px 300px); /* 固定為 3 列 */
+    grid-template-columns: repeat(auto auto auto); /* 固定為 3 列 */
     gap: 50px;
     padding: 50px;
     width: 100%; /* 確保內容寬度佔滿 */

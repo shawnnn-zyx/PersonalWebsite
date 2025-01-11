@@ -7,6 +7,7 @@
     display: flex; /* 水平佈局 */
     height: 100vh; /* 高度佔滿視窗 */
     width: 100%; /* 確保寬度佔滿 */
+    overflow: hidden; /* 防止溢出 */
 }
 
 * {
