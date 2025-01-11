@@ -14,8 +14,8 @@
 .project-origin {
     position: relative; /* 確保文字可以定位在圖片上 */
     width: 100%; /* 繼承網格列的寬度 */
-    height: auto; 
-    overflow: hidden; /* 避免內容溢出 */
+    height: 300px; /* 固定高度 */
+    overflow: hidden; /* 避免溢出 */
     border-radius: 0; /* 移除圓角 */
     margin: 0; /* 避免外間距干擾網格 */
 }
@@ -26,8 +26,9 @@
 
 .project-image {
     width: 100%; /* 撐滿寬度 */
-    height: auto; /* 高度自適應 */
+    height: 100%; /* 填滿父容器高度 */
     display: block; /* 確保圖片是塊級元素 */
+    object-fit: contain; /* 保持圖片完整顯示，即使有空白區域 */
 }
 
 .project-details {
