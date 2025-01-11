@@ -4,7 +4,7 @@
     flex-direction: column; /* 垂直佈局 */
     align-items: flex-start; /* 左對齊 */
     padding: 50px; /* 高50px、寬50px */
-    width: 315px; /* 固定寬度 */
+    width: 360px; /* 固定寬度 */
     height: 100vh; /* 讓容器高度佔滿視窗 */
     background-color: white; /* 背景色 */
     color: black; /* 字體顏色 */
@@ -75,7 +75,7 @@
     align-items: flex-end; /* 靠底部對齊 */
     padding: 0; /* 移除內邊距，依靠 navbar 的 padding 設置 */
     margin-top: auto; /* 將 icons 推到底部 */
-    gap: 20px; /* icon 之間的間距 */
+    gap: 30px; /* icon 之間的間距 */
 }
 
 .icons img {

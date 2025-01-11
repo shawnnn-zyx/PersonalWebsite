@@ -65,7 +65,7 @@
 }
 
 .about-summary {
-    grid-template-columns: repeat(3fr); /* 固定為 3 列 */
+    grid-template-columns: repeat(1fr);
     width: 100vh; /* 撐滿父容器的可用寬度 */
     padding: 0; /* 內部無額外邊距 */
     text-align: start; /* 文字居中對齊（可根據需求調整） */
