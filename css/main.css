@@ -2,7 +2,7 @@
 .content-main-page {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 動態列數 */
-    gap: 25px;
+    gap: auto;
     padding: 50px;
     width: 100%; /* 確保內容寬度佔滿 */
     height: auto; 
