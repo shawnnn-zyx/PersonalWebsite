@@ -18,7 +18,7 @@
     align-items: center; /* 垂直居中 */
     gap: auto; /* 自動水平間距 */
     padding: 0; /* 無內邊距 */
-    font-size: 32; /* 字體大小 */
+    font-size: 40; /* 字體大小 */
     font-family: "Bungee", sans-serif;
 }
 
@@ -75,7 +75,7 @@
     align-items: flex-end; /* 靠底部對齊 */
     padding: 0; /* 移除內邊距，依靠 navbar 的 padding 設置 */
     margin-top: auto; /* 將 icons 推到底部 */
-    gap: 60px; /* icon 之間的間距 */
+    gap: 40px; /* icon 之間的間距 */
 }
 
 .icons img {
