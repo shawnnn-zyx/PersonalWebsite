@@ -1,13 +1,12 @@
 /* Updated Main Content */
 .content-main-page {
-    flex: 1; /* 自動佔滿剩餘空間 */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
     padding: 50px;
-    align-items: start;
-    background-color: white; /* 背景色 */
-    overflow-y: auto; /* 如果內容超出，允許垂直滾動 */
+    width: 100%; /* 確保內容寬度佔滿 */
+    overflow-y: auto; /* 垂直滾動 */
+    box-sizing: border-box; /* 包含內邊距計算 */
 }
 
 /* Project Box */
@@ -38,12 +37,13 @@
 }
 
 .project-title {
-    background-color:white; /* 白色半透明背景 */
+    background-color:white; /* 白色背景 */
     color:black;
-    padding: 6px; /* 內邊距 */
+    padding: 5px 10px; /* 內邊距 */
     font-size: 18px; /* 字體大小 */
     font-family: "Blinker", sans-serif;
     font-weight: bold;
+    margin-bottom: 15px; /* 與 `project-tags` 間距 */
 }
 
 .project-tags {
@@ -52,6 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 15px;
 }
 
 .tag {
@@ -60,5 +61,4 @@
     padding: 2px 6px; /* 內邊距 */
     border-radius: 0; /* 移除圓角 */
     font-size: 12px; /* 字體大小 */
-    line-height: 1.2; /* 行距 */
 }
