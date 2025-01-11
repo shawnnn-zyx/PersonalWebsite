@@ -44,7 +44,6 @@
     font-size: 18px; /* 字體大小 */
     font-family: "Blinker", sans-serif;
     font-weight: bold;
-    margin-bottom: 15px; /* 與 `project-tags` 間距 */
 }
 
 .project-tags {
