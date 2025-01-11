@@ -4,7 +4,7 @@
     flex-direction: column; /* 垂直佈局 */
     align-items: flex-start; /* 左對齊 */
     padding: 50px; /* 高50px、寬50px */
-    width: 250px; /* 固定寬度 */
+    width: 100vh; /* 固定寬度 */
     height: 100vh; /* 讓容器高度佔滿視窗 */
     background-color: white; /* 背景色 */
     color: black; /* 字體顏色 */
