@@ -12,9 +12,12 @@
 
 /* Project Box */
 .project-origin {
-    position: relative;
-    border-radius: 0px;
-    overflow: hidden;
+    position: relative; /* 確保文字可以定位在圖片上 */
+    width: 100%; /* 繼承網格列的寬度 */
+    height: auto; /* 高度隨內容自適應 */
+    overflow: hidden; /* 避免內容溢出 */
+    border-radius: 0; /* 移除圓角 */
+    margin: 0; /* 避免外間距干擾網格 */
 }
 
 .project-origin:hover {
@@ -39,14 +42,14 @@
     color:black;
     padding: 6px; /* 內邊距 */
     font-size: 18px; /* 字體大小 */
-    font-family: "Bungee", sans-serif;
+    font-family: "Blinker", sans-serif;
     font-weight: bold;
     margin-bottom: 15px; /* 與 `project-tags` 間距 */
 }
 
 .project-tags {
     font-size: 12px; /* 字體大小 */
-    font-family: "Bungee", sans-serif;
+    font-family: "Blinker", sans-serif;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
