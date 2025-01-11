@@ -36,7 +36,6 @@
     bottom: 10px; /* 距離圖片底部 */
     left: 10px; /* 距離圖片左側 */
     color: white; /* 字體顏色為白色 */
-    display: flex;
     flex-direction: column; /* 垂直排列 title 和 tags */
 }
 
@@ -47,7 +46,6 @@
     font-size: 18px; /* 字體大小 */
     font-family: "Blinker", sans-serif;
     font-weight: bold;
-    display: inline-block; /* 让宽度随内容调整 */
     margin-bottom: 8px; /* 與 `project-tags` 間距 */
 }
 
