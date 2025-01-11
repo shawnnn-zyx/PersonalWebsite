@@ -1,23 +1,22 @@
 /* Updated Main Content */
 .content-main-page {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 動態列數 */
-    gap: 25px;
-    padding: 50px;
-    width: 100%; /* 確保內容寬度佔滿 */
-    height: auto; 
-    box-sizing: border-box; /* 包含內邊距計算 */
-    overflow-y: auto; /* 若內容超出，允許滾動 */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 每列最小宽度 200px，最大填充剩余空间 */
+    gap: 25px; /* 项目之间的间距 */
+    padding: 50px; /* 父容器内边距 */
+    box-sizing: border-box; /* 包括内边距 */
 }
 
 /* Project Box */
 .project-origin {
-    position: relative; /* 確保文字可以定位在圖片上 */
-    width: 300px; /* 繼承網格列的寬度 */
-    height: 300px; /* 固定高度 */
-    overflow: hidden; /* 避免溢出 */
-    border-radius: 0; /* 移除圓角 */
-    margin: 0; /* 避免外間距干擾網格 */
+    position: relative;
+    width: 100%; /* 占满网格列 */
+    aspect-ratio: 1 / 1; /* 固定项目框为正方形 */
+    overflow: hidden; /* 隐藏超出内容 */
+    display: flex;
+    flex-direction: column; /* 垂直排列内容 */
+    justify-content: flex-end; /* 标题和标签靠底部对齐 */
+    background-color: #f0f0f0; /* 默认背景色 */
 }
 
 .project-origin:hover {
@@ -25,19 +24,17 @@
 }
 
 .project-image {
-    width: 300px; /* 撐滿寬度 */
-    height: 300px; /* 填滿父容器高度 */
-    display: block; /* 確保圖片是塊級元素 */
-    object-fit: contain; /* 保持圖片完整顯示，即使有空白區域 */
+    width: 100%; /* 图片宽度占满容器 */
+    height: 100%; /* 高度自动适应 */
+    object-fit: cover; /* 图片裁剪填充容器 */
 }
 
 .project-details {
-    position: absolute;
-    bottom: 10px; /* 距離圖片底部 */
-    left: 10px; /* 距離圖片左側 */
-    color: white; /* 字體顏色為白色 */
-    display: flex;
-    flex-direction: column; /* 垂直排列 title 和 tags */
+    position: absolute; /* 定位在图片上 */
+    bottom: 10px; /* 距离项目框底部 */
+    left: 10px; /* 距离项目框左侧 */
+    right: 10px; /* 距离项目框右侧 */
+    color: white;
 }
 
 .project-title {
@@ -48,22 +45,21 @@
     font-family: "Blinker", sans-serif;
     font-weight: bold;
     margin-bottom: 8px; /* 與 `project-tags` 間距 */
+    display: inline-block; /* 背景宽度随内容 */
 }
 
 .project-tags {
-    font-size: 12px; /* 字體大小 */
-    font-family: "Blinker", sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex; /* 水平排列标签 */
+    flex-wrap: wrap; /* 标签换行 */
+    gap: 8px; /* 标签之间的间距 */
 }
 
 .tag {
     background-color:black; /* 黑色背景 */
     color: white;
-    padding: 2px 6px; /* 內邊距 */
-    border-radius: 0; /* 移除圓角 */
-    font-size: 12px; /* 字體大小 */
+    padding: 2px 6px; /* 内边距 */
+    border-radius: 4px; /* 可选：圆角 */
+    font-size: 12px; /* 固定字体大小 */
 }
 
 .about-summary {
