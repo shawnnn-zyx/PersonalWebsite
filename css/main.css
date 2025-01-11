@@ -14,7 +14,7 @@
 .project-origin {
     position: relative; /* 確保文字可以定位在圖片上 */
     width: 100%; /* 繼承網格列的寬度 */
-    height: 300px; /* 固定高度 */
+    height: 100%; /* 固定高度 */
     overflow: hidden; /* 避免溢出 */
     border-radius: 0; /* 移除圓角 */
     margin: 0; /* 避免外間距干擾網格 */
@@ -65,7 +65,7 @@
 }
 
 .about-summary {
-    width: 100%; /* 撐滿父容器的可用寬度 */
+    width: 100vh; /* 撐滿父容器的可用寬度 */
     padding: 0; /* 內部無額外邊距 */
     text-align: start; /* 文字居中對齊（可根據需求調整） */
     box-sizing: border-box; /* 確保寬度計算包含邊框和內邊距 */
