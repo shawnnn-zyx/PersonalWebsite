@@ -3,7 +3,7 @@
     display: grid;
     gap: 50px; /* 项目之间的间距 */
     padding: 50px; /* 父容器内边距 */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 每列最小宽度 300px，最大填充剩余空间 */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 每列最小宽度 300px，最大填充剩余空间 */
     box-sizing: border-box; /* 包括内边距 */
     overflow-x: auto; /* 水平滚动条 */
 }
