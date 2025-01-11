@@ -5,8 +5,9 @@
     gap: 50px;
     padding: 50px;
     width: 100%; /* 確保內容寬度佔滿 */
-    overflow-y: auto; /* 垂直滾動 */
+    height: auto; 
     box-sizing: border-box; /* 包含內邊距計算 */
+    overflow-y: auto; /* 若內容超出，允許滾動 */
 }
 
 /* Project Box */
