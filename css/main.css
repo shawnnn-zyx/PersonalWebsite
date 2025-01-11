@@ -29,8 +29,8 @@
 
 .project-details {
     position: absolute;
-    bottom: 10px; /* 距離圖片底部 10px */
-    left: 10px; /* 距離圖片左側 10px */
+    bottom: 10px; /* 距離圖片底部 */
+    left: 10px; /* 距離圖片左側 */
     color: white; /* 字體顏色為白色 */
 }
 
@@ -39,14 +39,17 @@
     color:black;
     padding: 6px; /* 內邊距 */
     font-size: 18px; /* 字體大小 */
+    font-family: "Bungee", sans-serif;
     font-weight: bold;
-    margin-bottom: 5px; /* 與 `project-tags` 間距 */
+    margin-bottom: 15px; /* 與 `project-tags` 間距 */
 }
 
 .project-tags {
+    font-size: 12px; /* 字體大小 */
+    font-family: "Bungee", sans-serif;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .tag {
