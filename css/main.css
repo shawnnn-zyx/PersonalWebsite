@@ -61,7 +61,7 @@
     background-color:black; /* 黑色背景 */
     color: white;
     padding: 2px 6px; /* 内边距 */
-    border-radius: 4px; /* 可选：圆角 */
+    border-radius: 0px; /* 可选：圆角 */
     font-size: 12px; /* 固定字体大小 */
     font-family: "Blinker", sans-serif;
 }
@@ -70,6 +70,6 @@
     grid-template-columns: repeat(1fr);
     width: 100vh; /* 撐滿父容器的可用寬度 */
     padding: 0; /* 內部無額外邊距 */
-    text-align: start; /* 文字居中對齊（可根據需求調整） */
+    text-align: start; /* 文字靠左對齊 */
     box-sizing: border-box; /* 確保寬度計算包含邊框和內邊距 */
 }
