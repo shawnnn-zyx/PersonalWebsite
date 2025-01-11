@@ -32,6 +32,7 @@
 }
 
 .project-details {
+    position: absolute;
     bottom: 10px; /* 距離圖片底部 */
     left: 10px; /* 距離圖片左側 */
     color: white; /* 字體顏色為白色 */
