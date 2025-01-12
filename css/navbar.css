@@ -19,7 +19,7 @@
     align-items: center; /* 垂直居中 */
     gap: auto; /* 自動水平間距 */
     padding: 0; /* 無內邊距 */
-    font-size: 26px; /* 字體大小 */
+    font-size: 28px; /* 字體大小 */
     font-family: "Bungee", sans-serif;
 }
 
@@ -65,7 +65,7 @@
 .dropdown a {
     color: black;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     display: block;
     margin: 5px 0;
 }
