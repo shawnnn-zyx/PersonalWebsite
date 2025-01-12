@@ -21,7 +21,7 @@
 
 /* Core Concept section */
 .core-concept {
-    display: grid;
+    display: flex;
     grid-template-columns: 300px auto;
     gap: 50px;
     align-items: center;
@@ -44,7 +44,7 @@
 
 /* Technical Details section */
 .technical-details {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 300px);
     gap: 50px;
     align-items: center;
