@@ -32,6 +32,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: "Blinker", sans-serif;
+    gap: 18px;
 }
 
 .core-concept .image-section img {
@@ -53,6 +55,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: "Blinker", sans-serif;
+    gap: 18px;
 }
 
 .technical-details .image-section img {
