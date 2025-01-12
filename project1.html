@@ -12,7 +12,7 @@
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
-        <div class="name-title">Shawn Zheng</div>
+        <a href="index.html" class="name-title">Shawn Zheng</a>
         <ul class="sidebar">
 
             <!-- Game Section -->
@@ -47,13 +47,14 @@
                 <button class="dropdown-btn">Website</button>
                 <ul class="dropdown">
                     <li><a href="project6.html">HuaWoo Diary</a></li>
-                    <li><a href="project8.html">KingdomClash Campaign Page</a></li>
+                    <li><a href="project8.html">KingdomClash Page</a></li>
                 </ul>
             </li>
 
             <!-- About -->
             <li class="sidebar-item">
-            <li><a href="about.html">About</a></li>
+                <a href="about.html">About</a>
+            </li>
         </ul>
         <div class="icons">
             <a href="mailto:yz10947@nyu.edu"><img src="assets/icon/email.png" alt="Email"></a>
@@ -64,14 +65,25 @@
 
     <!-- Project Content -->
     <div class="content-project-page">
-        <h1>Shopping Maniac</h1>
-        <h2>Core Concept</h2>
-        <p>The evolution of shopping, from physical stores to online platforms, seems to have stalled. Are there new interactive possibilities? As a grocery shopping enthusiast, Shawn, alongside his teammate Duban, explores this question through a game experiment. By combining a virtual mall with a physical shopping cart, Shopping Maniac reimagines how we interact with shopping spaces.</p>
-        <img src="assets/img/Project_content_ShoppingManiac_01.jpg" alt="ShoppingManiac_01">
-        <img src="assets/img/Project_content_ShoppingManiac_02.jpg" alt="ShoppingManiac_02">
-        <img src="assets/img/Project_content_ShoppingManiac_03.jpg" alt="ShoppingManiac_03">
-        <h2>Technical Details</h2>
-        <p>Hall effect sensors detect signals as magnets on the cart's wheels pass by during movement. These signals are transmitted to Arduino, enabling real-time tracking of cart motion. The data syncs with Unity, where the cart's movement is visualized. In Shopping Maniac, players score by collecting food, smashing objects, and maximizing points within a time limit.</p>
-    </div>
+        <!-- Layer 1 Title -->
+        <h1 class="project-title">Shopping Maniac</h1>
+
+        <!-- Layer 2 Core Concept -->
+        <div class="project-section">
+            <h2>Core Concept</h2>
+            <p>The evolution of shopping, from physical stores to online platforms, seems to have stalled. Are there new interactive possibilities? As a grocery shopping enthusiast, Shawn, alongside his teammate Duban, explores this question through a game experiment. By combining a virtual mall with a physical shopping cart, Shopping Maniac reimagines how we interact with shopping spaces.</p>
+            <img class="horizontal-image" src="assets/img/Project_content_ShoppingManiac_01.jpg" alt="Shopping Maniac Concept">
+        </div>
+
+        <!-- Layer 3 Technical Details -->
+        <div class="project-grid">
+            <img class="square-image" src="assets/img/Project_content_ShoppingManiac_02.jpg" alt="Shopping Maniac Image 1">
+            <img class="square-image" src="assets/img/Project_content_ShoppingManiac_03.jpg" alt="Shopping Maniac Image 2">
+            <div class="project-section">
+                <h2>Technical Details</h2>
+                <p>Hall effect sensors detect signals as magnets on the cart's wheels pass by during movement. These signals are transmitted to Arduino, enabling real-time tracking of cart motion. The data syncs with Unity, where the cart's movement is visualized. In Shopping Maniac, players score by collecting food, smashing objects, and maximizing points within a time limit.</p>
+            </div>
+        </div>
+</div>
 </body>
 </html>

@@ -1,11 +1,52 @@
+/* 父容器设置 */
 .content-project-page {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(3, 1fr); /* 三列布局 */
+    gap: 50px; /* 元素间距 */
+    padding: 50px; /* 页面内边距 */
+    box-sizing: border-box; /* 包括内边距在宽度计算中 */
 }
 
-.content-project-page img {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 8px;
+/* 主标题样式 */
+.project-title {
+    grid-column: 1 / -1; /* 跨越所有列 */
+    font-size: 28px;
+    font-family: "Blinker", sans-serif;
+    font-weight: 600; /* semibold */
+    text-align: center;
+}
+
+/* 每个项目部分的样式 */
+.project-section {
+    display: flex; /* 使用 Flex 布局 */
+    flex-direction: column; /* 垂直排列 */
+    gap: 18px; /* 内部元素间距 */
+    font-family: "Blinker", sans-serif;
+}
+
+/* 小标题样式 */
+.project-section h2 {
+    font-size: 28px;
+    font-weight: 600; /* semibold */
+}
+
+/* 横向图片样式 */
+.horizontal-image {
+    width: 100%; /* 撑满容器宽度 */
+    height: auto; /* 自动调整高度 */
+    object-fit: cover; /* 确保图片比例不变 */
+    grid-column: 1 / -1; /* 跨越所有列 */
+}
+
+/* 方形图片样式 */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三等分布局 */
+    gap: 50px; /* 图片与文本之间的间距 */
+}
+
+.square-image {
+    width: 100%; /* 占满网格列 */
+    aspect-ratio: 1 / 1; /* 方形比例 */
+    object-fit: cover; /* 确保图片比例 */
 }
