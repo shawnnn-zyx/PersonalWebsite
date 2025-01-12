@@ -67,6 +67,9 @@
 }
 
 .about-summary {
+    grid-column: 1 / -1; /* 跨越所有列 */
+    display: flex;
+    flex-direction: column; /* 垂直排列段落 */
     width: 100%; /* 撑满父容器宽度 */
     padding: 0; /* 无额外内边距 */
     text-align: start; /* 文字靠左对齐 */
