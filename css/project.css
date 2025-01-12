@@ -23,8 +23,7 @@
 .project-origin {
     position: relative;
     width: 100%; /* 占满网格列 */
-    height: 300px; /* 占满网格列 */
-    overflow: hidden; /* 隐藏超出内容 */
+    height: 100%; /* 占满网格列 */
     display: flex;
     flex-direction: column; /* 垂直排列内容 */
     gap: 16px; /* Gap between title and description */
