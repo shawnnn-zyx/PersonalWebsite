@@ -14,6 +14,7 @@
 }
 
 .name-title {
+    text-decoration: none; /* 去掉超链接的下划线 */
     display: flex; /* 水平佈局 */
     align-items: center; /* 垂直居中 */
     gap: auto; /* 自動水平間距 */
