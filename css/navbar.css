@@ -15,11 +15,13 @@
 
 .name-title {
     text-decoration: none; /* 去掉超链接的下划线 */
-    display: flex; /* 水平佈局 */
-    align-items: center; /* 垂直居中 */
-    gap: auto; /* 自動水平間距 */
+    display: block; /* 水平佈局 */
+    width: 100%; /* 寬度佔滿父容器 */
+    white-space: nowrap; /* 禁止換行 */
+    overflow: hidden; /* 隱藏溢出內容 */
     padding: 0; /* 無內邊距 */
-    font-size: 26px; /* 字體大小 */
+    text-align: center; /* 文字置中 */
+    font-size: clamp(16px, 4vw, 28px); /* 自適應字體大小，最小16px，最大28px */
     font-family: "Bungee", sans-serif;
 }
 
