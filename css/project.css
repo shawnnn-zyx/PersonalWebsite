@@ -36,19 +36,6 @@
     object-fit: cover;
 }
 
-/* Large Project Origin Styling */
-.project-large {
-    grid-column: span 2; /* 跨越兩列 */
-    justify-self: center; /* 水平置中 */
-}
-
-.project-large img {
-    width: 700px; /* 固定寬度 */
-    max-width: 100%; /* 確保不超出容器 */
-    height: auto; /* 保持比例 */
-    object-fit: cover; /* 確保圖片比例 */
-}
-
 .project-origin h2 {
     font-size: 16px;
     font-weight: bold;
@@ -65,9 +52,5 @@
 @media (max-width: 768px) {
     .content-project-page {
         grid-template-columns: 1fr; /* Single-column layout on smaller screens */
-    }
-
-    .project-large img {
-        width: 100%; /* 在小螢幕上寬度占滿 */
     }
 }
