@@ -1,66 +1,42 @@
-/* 父容器设置 */
+/* Content Layout */
 .content-project-page {
     display: grid;
-    /* flex: 1; */
-    gap: 50px; /* 内容之间的间距 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 50px;
     padding: 50px;
-    width: 100%; /* 確保內容寬度佔滿 */
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
-/* 主标题样式 */
-.project-title {
-    grid-column: 1 / -1; /* 跨越所有列 */
-    font-size: 28px;
-    font-family: "Blinker", sans-serif;
-    font-weight: 600; /* semibold */
-    text-align: start; /* 文字靠左对齐 */
-}
-
-/* Core Concept section */
-.core-concept {
-    display: grid;
-    grid-template-columns: 300px auto;
-    gap: 50px;
-    align-items: center;
-}
-
-.core-concept .text-section {
+/* Project Origin Styling */
+.project-origin {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: "Blinker", sans-serif;
-    gap: 18px;
-    font-size: 16px;
+    flex-direction: column; /* Vertical stacking for text and images */
+    align-items: flex-start;
+    gap: 16px; /* Gap between title and description */
+    text-align: start;
 }
 
-.core-concept .image-section img {
-    max-height: 300px;
-    max-width: 100%;
+.project-origin img {
+    width: 100%; /* Image spans the full width */
+    height: auto;
     object-fit: cover;
 }
 
-/* Technical Details section */
-.technical-details {
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
-    gap: 50px;
-    align-items: center;
-    height: 300px;
-}
-
-.technical-details .text-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: "Blinker", sans-serif;
-    gap: 18px;
+.project-origin h2 {
     font-size: 16px;
+    font-weight: bold;
+    font-family: "Blinker", sans-serif;
 }
 
-.technical-details .image-section img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: cover;
+.project-origin p {
+    font-size: 16px;
+    font-family: "Blinker", sans-serif;
+    line-height: 1.5; /* Improves readability */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content-project-page {
+        grid-template-columns: 1fr; /* Single-column layout on smaller screens */
+    }
 }
