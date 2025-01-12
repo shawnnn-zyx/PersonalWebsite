@@ -1,12 +1,11 @@
 /* 父容器设置 */
 .content-project-page {
     display: grid;
-    flex: 1; /* 填充剩余空间 */
+    /* flex: 1; */
     gap: 50px; /* 内容之间的间距 */
     padding: 50px;
     width: 100%; /* 確保內容寬度佔滿 */
     box-sizing: border-box;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 每列最小宽度 300px，最大填充剩余空间 */
     overflow-x: hidden;
 }
 
