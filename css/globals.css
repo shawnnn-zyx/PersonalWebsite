@@ -10,6 +10,13 @@
     overflow: hidden; /* 防止溢出 */
 }
 
+.project-layout {
+    display: flex; /* 水平排列 Navbar 和内容 */
+    height: 100vh; /* 高度占满视窗 */
+    width: 100%; /* 宽度占满视窗 */
+    overflow: hidden; /* 禁止溢出 */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;

@@ -1,10 +1,11 @@
 /* 父容器设置 */
 .content-project-page {
-    display: grid; /* 使用网格布局 */
-    grid-template-columns: repeat(3, 1fr); /* 三列布局 */
-    gap: 50px; /* 元素间距 */
-    padding: 50px; /* 页面内边距 */
-    box-sizing: border-box; /* 包括内边距在宽度计算中 */
+    flex: 1; /* 填充剩余空间 */
+    display: flex;
+    flex-direction: column; /* 垂直排列内容 */
+    gap: 50px; /* 内容之间的间距 */
+    padding: 50px;
+    box-sizing: border-box;
 }
 
 /* 主标题样式 */
@@ -13,7 +14,7 @@
     font-size: 28px;
     font-family: "Blinker", sans-serif;
     font-weight: 600; /* semibold */
-    text-align: center;
+    text-align: start; /* 文字靠左对齐 */
 }
 
 /* 每个项目部分的样式 */
@@ -22,12 +23,14 @@
     flex-direction: column; /* 垂直排列 */
     gap: 18px; /* 内部元素间距 */
     font-family: "Blinker", sans-serif;
+    text-align: start; /* 文字靠左对齐 */
 }
 
 /* 小标题样式 */
 .project-section h2 {
     font-size: 28px;
     font-weight: 600; /* semibold */
+    text-align: start; /* 文字靠左对齐 */
 }
 
 /* 横向图片样式 */
