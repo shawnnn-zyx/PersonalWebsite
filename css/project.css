@@ -19,52 +19,44 @@
     text-align: start; /* 文字靠左对齐 */
 }
 
-/* 每个项目部分的样式 */
-.project-section {
-    position: relative;
-    width: 100%; /* 占满网格列 */
-    height: 300px; /* 占满网格列 */
-    display: flex; /* 使用 Flex 布局 */
-    flex-direction: row; /* 垂直排列 */
-    gap: 50px; /* 内部元素间距 */
-    font-family: "Blinker", sans-serif;
-    text-align: start; /* 文字靠左对齐 */
+/* Core Concept section */
+.core-concept {
+    display: grid;
+    grid-template-columns: 300px auto;
+    gap: 50px;
+    align-items: center;
+    height: 300px;
 }
 
-.project-text {
-    font-size: 16px;
-    gap: 18px
+.core-concept .text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* 小标题样式 */
-.project-section h2 {
-    font-size: 18px;
-    font-weight: 600; /* semibold */
-    text-align: start; /* 文字靠左对齐 */
+.core-concept .image-section img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
-/* 横向图片样式 */
-.horizontal-image {
-    width: 100%; /* 撑满容器宽度 */
-    height: auto; /* 自动调整高度 */
-    object-fit: cover; /* 确保图片比例不变 */
-    grid-column: 1 / -1; /* 跨越所有列 */
+/* Technical Details section */
+.technical-details {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 50px;
+    align-items: center;
+    height: 300px;
 }
 
-/* 方形图片样式 */
-.project-grid {
-    width: 100%; /* 占满网格列 */
-    height: 300px; /* 占满网格列 */
-    display: flex; /* 使用 Flex 布局 */
-    flex-direction: column; /* 垂直排列 */
-    gap: 50px; /* 内部元素间距 */
-    font-family: "Blinker", sans-serif;
-    text-align: start; /* 文字靠左对齐 */
+.technical-details .text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-
-.square-image {
-    width: 100%; /* 占满网格列 */
-    aspect-ratio: 1 / 1; /* 方形比例 */
-    object-fit: cover; /* 确保图片比例 */
+.technical-details .image-section img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
