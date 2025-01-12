@@ -21,6 +21,7 @@
 
 /* 每个项目部分的样式 */
 .project-section {
+    position: relative;
     width: 100%; /* 占满网格列 */
     height: 300px; /* 占满网格列 */
     display: flex; /* 使用 Flex 布局 */
@@ -31,6 +32,7 @@
 }
 
 .project-text {
+    font-size: 16px;
     gap: 18px
 }
 
