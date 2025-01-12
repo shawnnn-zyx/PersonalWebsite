@@ -34,7 +34,6 @@
 }
 
 .sidebar-item {
-    all: unset; /* 重置所有默认样式 */
     margin-bottom: 15px;
     font-size: 20px; /* 字體大小 */
     font-family: "Blinker", sans-serif;

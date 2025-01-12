@@ -67,9 +67,9 @@
 }
 
 .about-summary {
-    grid-template-columns: 1000px;
-    width: 100vh; /* 撐滿父容器的可用寬度 */
-    padding: 0; /* 內部無額外邊距 */
-    text-align: start; /* 文字靠左對齊 */
-    box-sizing: border-box; /* 確保寬度計算包含邊框和內邊距 */
+    width: 100%; /* 撑满父容器宽度 */
+    padding: 0; /* 无额外内边距 */
+    text-align: start; /* 文字靠左对齐 */
+    box-sizing: border-box; /* 确保宽度包含 padding 和 border */
+    gap: 25px; /* 子元素之间的间距 */
 }
