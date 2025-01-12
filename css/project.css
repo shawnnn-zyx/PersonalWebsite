@@ -1,10 +1,22 @@
 /* Content Layout */
 .content-project-page {
     display: grid;
+    gap: 50px; /* 项目之间的间距 */
+    padding: 50px; /* 父容器内边距 */
+    width: 100%; /* 確保內容寬度佔滿 */
+    height: auto;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 50px;
-    padding: 50px;
     box-sizing: border-box;
+    overflow-x: auto; /* 水平滚动条 */
+}
+
+/* 主标题样式 */
+.project-title {
+    grid-column: 1 / -1; /* 跨越所有列 */
+    font-size: 28px;
+    font-family: "Blinker", sans-serif;
+    font-weight: 600; /* semibold */
+    text-align: start; /* 文字靠左对齐 */
 }
 
 /* Project Origin Styling */
