@@ -36,6 +36,12 @@
     object-fit: cover;
 }
 
+/* Large Project Origin Styling */
+.project-large {
+    grid-column: span 2; /* 跨越兩列 */
+    justify-self: center; /* 水平置中 */
+}
+
 .project-large img {
     width: 700px; /* 固定寬度 */
     max-width: 100%; /* 確保不超出容器 */
