@@ -2,7 +2,7 @@
 .content-project-page {
     flex: 1; /* 填充剩余空间 */
     display: flex;
-    flex-direction: column; /* 垂直排列内容 */
+    flex-direction: row; /* 垂直排列内容 */
     gap: 50px; /* 内容之间的间距 */
     padding: 50px;
     box-sizing: border-box;
@@ -28,7 +28,7 @@
 
 /* 小标题样式 */
 .project-section h2 {
-    font-size: 28px;
+    font-size: 18px;
     font-weight: 600; /* semibold */
     text-align: start; /* 文字靠左对齐 */
 }
