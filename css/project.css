@@ -36,6 +36,13 @@
     object-fit: cover;
 }
 
+.project-large img {
+    width: 700px; /* 固定寬度 */
+    max-width: 100%; /* 確保不超出容器 */
+    height: auto; /* 保持比例 */
+    object-fit: cover; /* 確保圖片比例 */
+}
+
 .project-origin h2 {
     font-size: 16px;
     font-weight: bold;
