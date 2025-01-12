@@ -7,7 +7,7 @@
     width: 100%; /* 確保內容寬度佔滿 */
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 每列最小宽度 300px，最大填充剩余空间 */
-    overflow-x: auto; /* 水平滚动条 */
+    overflow-x: hidden;
 }
 
 /* 主标题样式 */
@@ -50,9 +50,21 @@
 /* 方形图片样式 */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 三等分布局 */
-    gap: 50px; /* 图片与文本之间的间距 */
+    grid-template-areas:
+        "img1 img2 text"
+        "img1 img2 text";
+    gap: 50px;
 }
+.project-grid .square-image:nth-child(1) {
+    grid-area: img1;
+}
+.project-grid .square-image:nth-child(2) {
+    grid-area: img2;
+}
+.project-grid .project-text {
+    grid-area: text;
+}
+
 
 .square-image {
     width: 100%; /* 占满网格列 */
