@@ -1,11 +1,14 @@
 /* 父容器设置 */
 .content-project-page {
+    display: grid;
     flex: 1; /* 填充剩余空间 */
-    display: flex;
-    flex-direction: row; /* 垂直排列内容 */
+    flex-direction: column; /* 垂直排列内容 */
     gap: 50px; /* 内容之间的间距 */
     padding: 50px;
+    width: 100%; /* 確保內容寬度佔滿 */
     box-sizing: border-box;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 每列最小宽度 300px，最大填充剩余空间 */
+    overflow-x: auto; /* 水平滚动条 */
 }
 
 /* 主标题样式 */
@@ -21,9 +24,13 @@
 .project-section {
     display: flex; /* 使用 Flex 布局 */
     flex-direction: column; /* 垂直排列 */
-    gap: 18px; /* 内部元素间距 */
+    gap: 50px; /* 内部元素间距 */
     font-family: "Blinker", sans-serif;
     text-align: start; /* 文字靠左对齐 */
+}
+
+.project-text {
+    gap: 18px
 }
 
 /* 小标题样式 */
