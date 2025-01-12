@@ -21,6 +21,8 @@
 
 /* 每个项目部分的样式 */
 .project-section {
+    width: 100%; /* 占满网格列 */
+    height: 300px; /* 占满网格列 */
     display: flex; /* 使用 Flex 布局 */
     flex-direction: column; /* 垂直排列 */
     gap: 50px; /* 内部元素间距 */
@@ -49,20 +51,13 @@
 
 /* 方形图片样式 */
 .project-grid {
-    display: grid;
-    grid-template-areas:
-        "img1 img2 text"
-        "img1 img2 text";
-    gap: 50px;
-}
-.project-grid .square-image:nth-child(1) {
-    grid-area: img1;
-}
-.project-grid .square-image:nth-child(2) {
-    grid-area: img2;
-}
-.project-grid .project-text {
-    grid-area: text;
+    width: 100%; /* 占满网格列 */
+    height: 300px; /* 占满网格列 */
+    display: flex; /* 使用 Flex 布局 */
+    flex-direction: column; /* 垂直排列 */
+    gap: 50px; /* 内部元素间距 */
+    font-family: "Blinker", sans-serif;
+    text-align: start; /* 文字靠左对齐 */
 }
 
 
