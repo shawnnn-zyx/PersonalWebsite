@@ -1,54 +1,3 @@
-/* horizontal navbar */
-.horizontal-navbar {
-    display: none; /* Default: Hidden */
-    padding: 25px 50px 0; /* 上25px，左右50px，下0 */
-    background-color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Horizontal Menu */
-.horizontal-menu {
-    display: flex;
-    flex-direction: column; /* 垂直排列 */
-    gap: 18px; /* 上下間距 */
-}
-
-/* Top Section */
-.horizontal-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.horizontal-title {
-    font-family: "Blinker", sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-
-.menu-toggle {
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.dropdown.hidden {
-    display: none;
-}
-
-.hidden {
-    display: none; /* Default hidden */
-}
-
-
-
-
-/* vertical navbar */
 .navbar {
     display: flex;
     flex-direction: column; /* 垂直佈局 */
@@ -63,6 +12,7 @@
     overflow-y: auto; /* 若內容超出，允許滾動 */
 }
 
+
 .name-title {
     text-decoration: none; /* 去掉超链接的下划线 */
     display: block; /* 水平佈局 */
@@ -73,6 +23,7 @@
     font-size: clamp(16px, 2.5vw, 28px); /* 自適應字體大小，最小16px，最大28px */
     font-family: "Bungee", sans-serif;
 }
+
 
 .sidebar {
     list-style: none;
@@ -85,15 +36,18 @@
     font-family: "Blinker", sans-serif;
 }
 
+
 .sidebar-item {
     margin-bottom: 15px;
     font-size: 20px; /* 字體大小 */
     font-family: "Blinker", sans-serif;
 }
 
+
 .sidebar-item a {
     font-size: 18px; /* 字體大小 */
 }
+
 
 .dropdown-btn {
     background: none;
@@ -106,6 +60,7 @@
     width: 100%;
 }
 
+
 .dropdown {
     list-style: none;
     margin-top: 5px;
@@ -113,9 +68,11 @@
     padding-left: 10px;
 }
 
+
 .dropdown.active {
     display: block; /* 當展開時顯示 */
 }
+
 
 .dropdown a {
     color: black;
@@ -125,6 +82,7 @@
     margin: 5px 0;
 }
 
+
 .icons {
     display: flex; /* 使用 Flexbox 排列 */
     justify-content: flex-start; /* 靠左對齊 */
@@ -133,6 +91,7 @@
     margin-top: auto; /* 將 icons 推到底部 */
     gap: 45px; /* icon 之間的間距 */
 }
+
 
 .icons img {
     width: auto; /* 自動寬度 */
@@ -145,25 +104,4 @@
 
 
 
-/* Reset both navbars first */
-.horizontal-navbar {
-    display: none;
-  }
-
-.navbar {
-  display: flex;
-}
-
-
-
-/* Responsive: Show horizontal-navbar on mobile */
-@media (max-width: 768px) {
-    .horizontal-navbar {
-        display: block; /* Show horizontal navbar */
-      }
-      
-      .navbar {
-        display: none; /* Hide vertical navbar */
-      }
-}
 
