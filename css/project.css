@@ -39,7 +39,9 @@
 /* 特殊处理大图片 */
 .project-large {
     grid-column: 1 / -1; /* 跨越所有列 */
-    width: 700px; /* 固定寬度 */
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
     justify-self: center; /* 水平置中 */
 }
 
