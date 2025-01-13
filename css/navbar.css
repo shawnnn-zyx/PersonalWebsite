@@ -45,19 +45,10 @@
     display: none; /* Default hidden */
 }
 
-/* Responsive: Show horizontal-navbar on mobile */
-@media (max-width: 768px) {
-    .horizontal-navbar {
-        display: block !important; /* 确保显示 */
-    }
 
-    .navbar {
-        display: none !important; /* 确保隐藏 */
-    }
-}
+
 
 /* vertical navbar */
-
 .navbar {
     display: flex;
     flex-direction: column; /* 垂直佈局 */
@@ -150,4 +141,17 @@
     max-height: 50px; /* 最大高度限制為 50px，避免過大 */
     object-fit: contain; /* 確保圖片適配比例 */
     cursor: pointer;
+}
+
+
+
+/* Responsive: Show horizontal-navbar on mobile */
+@media (max-width: 768px) {
+    .horizontal-navbar {
+        display: block !important; /* 确保显示 */
+    }
+
+    .navbar {
+        display: none !important; /* 确保隐藏 */
+    }
 }
