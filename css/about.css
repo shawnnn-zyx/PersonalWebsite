@@ -11,7 +11,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 每列最小宽度 300px，最大填充剩余空间 */
     gap: 50px; /* 左右間隔 */
-    align-items: stretch; /* 左右等高 */
     padding: 50px;
     box-sizing: border-box;
     width: 100%;
@@ -22,8 +21,6 @@
 .about-photo img {
     width: 500px;
     height: 100%;
-    object-fit: cover; /* 確保圖片比例 */
-    border-radius: 10px; /* 可根據需求調整 */
 }
 
 /* About text */
