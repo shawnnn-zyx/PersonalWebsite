@@ -1,0 +1,59 @@
+/* General layout */
+.main-layout {
+    display: flex;
+    height: 100vh; /* Full height */
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Content layout */
+.content-about-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 左1份，右2份 */
+    gap: 50px; /* 左右間隔 */
+    align-items: stretch; /* 左右等高 */
+    padding: 50px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* About photo */
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 確保圖片比例 */
+    border-radius: 10px; /* 可根據需求調整 */
+}
+
+/* About text */
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 第一段靠上，第三段靠下 */
+}
+
+/* About title */
+.about-text h1 {
+    font-size: 28px;
+    font-family: "Blinker", sans-serif;
+    font-weight: 600; /* semibold */
+    margin-bottom: 36px; /* 與敘述文字間距 */
+    text-align: start;
+}
+
+/* Description text */
+.description {
+    font-size: 16px;
+    font-family: "Blinker", sans-serif;
+    line-height: 1.6;
+    margin-bottom: auto; /* 將第三段推到下方 */
+    text-align: start;
+}
+
+/* Closing line */
+.closing-line {
+    font-size: 16px;
+    font-family: "Blinker", sans-serif;
+    text-align: start;
+    margin-top: auto; /* 靠下對齊 */
+}
