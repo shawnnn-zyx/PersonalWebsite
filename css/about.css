@@ -20,7 +20,7 @@
 
 /* About photo */
 .about-photo img {
-    width: 100%;
+    width: 500px;
     height: 100%;
     object-fit: cover; /* 確保圖片比例 */
     border-radius: 10px; /* 可根據需求調整 */
