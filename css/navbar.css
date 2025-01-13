@@ -48,7 +48,11 @@
 /* Responsive: Show horizontal-navbar on mobile */
 @media (max-width: 768px) {
     .horizontal-navbar {
-        display: block; /* Show horizontal-navbar */
+        display: block; /* 显示 horizontal-navbar */
+    }
+
+    .navbar {
+        display: none; /* 隐藏 vertical-navbar */
     }
 }
 
