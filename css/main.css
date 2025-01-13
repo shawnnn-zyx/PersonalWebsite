@@ -75,4 +75,6 @@
     text-align: start; /* 文字靠左对齐 */
     box-sizing: border-box; /* 确保宽度包含 padding 和 border */
     gap: 25px; /* 子元素之间的间距 */
+    font-family: "Blinker", sans-serif;
+    font-size: 18px;
 }

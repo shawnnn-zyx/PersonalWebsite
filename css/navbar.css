@@ -1,4 +1,59 @@
-/* 這是調整左邊navbar */
+/* horizontal navbar */
+.horizontal-navbar {
+    display: none; /* Default: Hidden */
+    padding: 25px 50px 0; /* 上25px，左右50px，下0 */
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Horizontal Menu */
+.horizontal-menu {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    gap: 18px; /* 上下間距 */
+}
+
+/* Top Section */
+.horizontal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.horizontal-title {
+    font-family: "Blinker", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dropdown.hidden {
+    display: none;
+}
+
+.hidden {
+    display: none; /* Default hidden */
+}
+
+/* Responsive: Show horizontal-navbar on mobile */
+@media (max-width: 768px) {
+    .horizontal-navbar {
+        display: block; /* Show horizontal-navbar */
+    }
+}
+
+/* vertical navbar */
+
 .navbar {
     display: flex;
     flex-direction: column; /* 垂直佈局 */
