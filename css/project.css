@@ -51,6 +51,15 @@
     object-fit: cover;
 }
 
+.project-large iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Optional: Remove border */
+}
+
 .project-origin h2 {
     font-size: 18px;
     font-weight: bold;
