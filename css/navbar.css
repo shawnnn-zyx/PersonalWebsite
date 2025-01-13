@@ -145,6 +145,14 @@
 
 
 
+/* Reset both navbars first */
+.horizontal-navbar,
+.navbar {
+  display: none !important;
+}
+
+
+
 /* Responsive: Show horizontal-navbar on mobile */
 @media (max-width: 768px) {
     .horizontal-navbar {
