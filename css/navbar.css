@@ -148,10 +148,23 @@
 /* Responsive: Show horizontal-navbar on mobile */
 @media (max-width: 768px) {
     .horizontal-navbar {
-        display: block !important; /* 确保显示 */
-    }
-
-    .navbar {
-        display: none !important; /* 确保隐藏 */
-    }
+        display: block; /* Show horizontal navbar */
+      }
+      
+      .navbar {
+        display: none; /* Hide vertical navbar */
+      }
 }
+
+/* Media query for desktop */
+@media screen and (min-width: 769px) {
+    .horizontal-navbar {
+      display: none; /* Hide horizontal navbar */
+    }
+    
+    .navbar {
+      display: flex; /* Show vertical navbar */
+    }
+  }
+
+
