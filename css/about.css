@@ -9,28 +9,27 @@
 /* Content layout */
 .content-about-page {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* 左側 1/3，右側 2/3 */
+    grid-template-columns: 1fr 2fr; /* 左 1/3，右 2/3 */
     gap: 50px; /* 左右間隔 */
     padding: 50px;
     box-sizing: border-box;
     width: 100%;
-    height: auto;
-    align-items: stretch; /* 左右欄等高 */
+    align-items: stretch; /* 左右等高 */
 }
 
 /* About photo */
 .about-photo img {
     width: 100%; /* 圖片寬度占滿左欄 */
-    height: auto; /* 高度自適應，保持比例 */
-    object-fit: cover; /* 確保圖片適應父容器 */
-    border-radius: 10px; /* 可選，圓角設置 */
+    height: 100%; /* 圖片高度與右欄對齊 */
+    object-fit: cover; /* 確保圖片比例 */
+    border-radius: 10px; /* 可選，添加圓角 */
 }
 
 /* About text */
 .about-text {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 第一段靠上，第三段靠下 */
+    flex-direction: column; /* 垂直排列 */
+    justify-content: space-between; /* 第一段靠上，結尾句靠下 */
 }
 
 /* About title */
@@ -38,7 +37,7 @@
     font-size: 28px;
     font-family: "Blinker", sans-serif;
     font-weight: 600; /* semibold */
-    margin-bottom: 36px; /* 與敘述文字間距 */
+    margin-bottom: 36px; /* 與敘述文字的間距 */
     text-align: start;
 }
 
@@ -46,7 +45,7 @@
 .description {
     font-size: 16px;
     font-family: "Blinker", sans-serif;
-    line-height: 1.6;
+    line-height: 1.6; /* 增加段落間距 */
     text-align: start;
 }
 
@@ -55,4 +54,17 @@
     font-size: 16px;
     font-family: "Blinker", sans-serif;
     text-align: start;
+    margin-top: auto; /* 推到下方 */
 }
+
+@media (max-width: 768px) {
+    .content-about-page {
+        grid-template-columns: 1fr; /* 單欄布局 */
+        gap: 30px;
+    }
+
+    .about-photo img {
+        height: auto; /* 圖片高度自適應 */
+    }
+}
+
