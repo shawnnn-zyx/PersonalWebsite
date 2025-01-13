@@ -9,12 +9,13 @@
 /* Content layout */
 .content-about-page {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* 左1份，右2份 */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 每列最小宽度 300px，最大填充剩余空间 */
     gap: 50px; /* 左右間隔 */
     align-items: stretch; /* 左右等高 */
     padding: 50px;
     box-sizing: border-box;
     width: 100%;
+    height: auto;
 }
 
 /* About photo */
