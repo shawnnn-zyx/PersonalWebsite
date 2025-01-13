@@ -22,7 +22,6 @@
     width: 100%; /* 圖片寬度占滿左欄 */
     height: 100%; /* 圖片高度與右欄對齊 */
     object-fit: cover; /* 確保圖片比例 */
-    border-radius: 10px; /* 可選，添加圓角 */
 }
 
 /* About text */
@@ -45,8 +44,14 @@
 .description {
     font-size: 16px;
     font-family: "Blinker", sans-serif;
-    line-height: 1.6; /* 增加段落間距 */
+    line-height: 1.6; /* 增加段落行高 */
     text-align: start;
+    margin-bottom: 16px; /* 每段之間的間距 */
+}
+
+/* 移除最後一段的間距 */
+.description:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Closing line */
