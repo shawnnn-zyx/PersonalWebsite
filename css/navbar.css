@@ -41,6 +41,10 @@
     font-family: "Blinker", sans-serif;
 }
 
+.sidebar-item a {
+    font-size: 18px; /* 字體大小 */
+}
+
 .dropdown-btn {
     background: none;
     border: none;
