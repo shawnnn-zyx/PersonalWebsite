@@ -146,9 +146,12 @@
 
 
 /* Reset both navbars first */
-.horizontal-navbar,
+.horizontal-navbar {
+    display: none;
+  }
+
 .navbar {
-  display: none !important;
+  display: flex;
 }
 
 
@@ -163,16 +166,4 @@
         display: none; /* Hide vertical navbar */
       }
 }
-
-/* Media query for desktop */
-@media screen and (min-width: 769px) {
-    .horizontal-navbar {
-      display: none; /* Hide horizontal navbar */
-    }
-    
-    .navbar {
-      display: flex; /* Show vertical navbar */
-    }
-  }
-
 
