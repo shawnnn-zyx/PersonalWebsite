@@ -13,6 +13,8 @@
 }
 
 
+
+
 .name-title {
     text-decoration: none; /* 去掉超链接的下划线 */
     display: block; /* 水平佈局 */
@@ -23,6 +25,8 @@
     font-size: clamp(16px, 2.5vw, 28px); /* 自適應字體大小，最小16px，最大28px */
     font-family: "Bungee", sans-serif;
 }
+
+
 
 
 .sidebar {
@@ -37,6 +41,8 @@
 }
 
 
+
+
 .sidebar-item {
     margin-bottom: 15px;
     font-size: 20px; /* 字體大小 */
@@ -44,9 +50,13 @@
 }
 
 
+
+
 .sidebar-item a {
     font-size: 18px; /* 字體大小 */
 }
+
+
 
 
 .dropdown-btn {
@@ -61,6 +71,8 @@
 }
 
 
+
+
 .dropdown {
     list-style: none;
     margin-top: 5px;
@@ -69,9 +81,13 @@
 }
 
 
+
+
 .dropdown.active {
     display: block; /* 當展開時顯示 */
 }
+
+
 
 
 .dropdown a {
@@ -83,6 +99,8 @@
 }
 
 
+
+
 .icons {
     display: flex; /* 使用 Flexbox 排列 */
     justify-content: flex-start; /* 靠左對齊 */
@@ -91,6 +109,8 @@
     margin-top: auto; /* 將 icons 推到底部 */
     gap: 45px; /* icon 之間的間距 */
 }
+
+
 
 
 .icons img {
@@ -104,20 +124,18 @@
 
 
 
-/* 默认隐藏水平导航栏，显示垂直导航栏 */
 .horizontal-navbar {
-    display: none;
+    padding: 50px
 }
 
-/* 768px 以下设备切换导航栏 */
+
+
 @media (max-width: 768px) {
     .horizontal-navbar {
-        display: block !important; /* 显示水平导航栏 */
+        display: block;
     }
 
     .navbar {
-        display: none !important; /* 隐藏垂直导航栏 */
+        display: none;
     }
 }
-
-
