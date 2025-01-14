@@ -146,10 +146,14 @@
 }
 
 .horizontal-menu {
-    gap: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px 10px;
 }
 
 .horizontal-menu-title {
+    font-size: clamp(16px, 2.5vw, 28px);
     text-decoration: none; /* 去掉超链接的下划线 */
     white-space: nowrap; /* 禁止換行 */
     padding: 0; /* 無內邊距 */
