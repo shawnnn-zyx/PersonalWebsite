@@ -105,20 +105,24 @@
 
 
 .horizontal-navbar {
-    display: none !important; /* 默认隐藏横向导航栏 */
+    display: none;
+    background: red;
+    padding: 10px;
 }
 
 .navbar {
-    display: flex; /* 默认显示竖向导航栏 */
+    display: flex;
+    background: blue;
+    padding: 10px;
 }
 
 @media (max-width: 768px) {
     .horizontal-navbar {
-        display: block !important; /* 显示横向导航栏 */
+        display: block !important;
     }
 
     .navbar {
-        display: none !important; /* 隐藏竖向导航栏 */
+        display: none !important;
     }
 }
 
