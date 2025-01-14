@@ -116,15 +116,12 @@
     padding: 10px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1px) {
     .horizontal-navbar {
-        display: block;
-        background: yellow; /* 测试样式 */
-    }
-
-    .navbar {
-        display: none;
+        display: block !important;
+        background: yellow !important;
     }
 }
+
 
 
