@@ -118,11 +118,12 @@
 
 @media (max-width: 768px) {
     .horizontal-navbar {
-        display: block !important;
+        display: block;
+        background: yellow; /* 测试样式 */
     }
 
     .navbar {
-        display: none !important;
+        display: none;
     }
 }
 
