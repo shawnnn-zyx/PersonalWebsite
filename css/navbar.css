@@ -124,12 +124,6 @@
 
 
 
-.horizontal-navbar {
-    padding: 50px
-}
-
-
-
 /* Responsive: Show horizontal-navbar on mobile */
 @media (max-width: 768px) {
     .horizontal-navbar {
