@@ -125,6 +125,8 @@
 
 
 .horizontal-navbar {
+    display: none;
+
     position: fixed; /* 固定在视窗 */
     top: 0; /* 距离视窗顶部为 0 */
     left: 0; /* 距离视窗左边为 0 */
@@ -139,10 +141,10 @@
 /* Responsive: Show horizontal-navbar on mobile */
 @media (max-width: 768px) {
     .horizontal-navbar {
-        display: block !important; /* 确保显示 */
+        display: block !important;
     }
 
     .navbar {
-        display: none !important; /* 确保隐藏 */
+        display: none !important;
     }
 }
