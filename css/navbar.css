@@ -143,6 +143,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: auto;
 }
 
 .horizontal-menu {
@@ -153,6 +154,7 @@
 }
 
 .horizontal-menu-title {
+    flex-grow: 1;
     font-size: clamp(16px, 6vw, 28px);
     text-decoration: none; /* 去掉超链接的下划线 */
     white-space: nowrap; /* 禁止換行 */
@@ -162,6 +164,7 @@
 }
 
 .menu-toggle-btn {
+    margin-left: auto;
     background: none; /* 无背景 */
     border: none; /* 无边框 */
     font-size: clamp(16px, 6vw, 28px);
