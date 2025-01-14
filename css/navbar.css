@@ -124,6 +124,13 @@
 
 
 
+.horizontal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 .horizontal-navbar {
     display: none;
 
