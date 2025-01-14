@@ -153,7 +153,7 @@
 }
 
 .horizontal-menu-title {
-    font-size: clamp(16px, 2.5vw, 28px);
+    font-size: clamp(16px, 6vw, 28px);
     text-decoration: none; /* 去掉超链接的下划线 */
     white-space: nowrap; /* 禁止換行 */
     padding: 0; /* 無內邊距 */
@@ -164,7 +164,7 @@
 .menu-toggle-btn {
     background: none; /* 无背景 */
     border: none; /* 无边框 */
-    font-size: 24px; /* 按钮大小 */
+    font-size: clamp(16px, 6vw, 28px);
     color: black; /* 按钮颜色 */
     cursor: pointer; /* 鼠标悬停变成手型 */
     flex-shrink: 0; /* 不允许按钮缩小 */
