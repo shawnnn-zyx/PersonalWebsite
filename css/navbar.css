@@ -130,12 +130,14 @@
 
 
 
+/* Responsive: Show horizontal-navbar on mobile */
 @media (max-width: 768px) {
     .horizontal-navbar {
-        display: block;
+        display: block !important; /* 确保显示 */
     }
 
+
     .navbar {
-        display: none;
+        display: none !important; /* 确保隐藏 */
     }
 }
