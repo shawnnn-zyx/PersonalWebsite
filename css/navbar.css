@@ -157,6 +157,16 @@
     font-family: "Bungee", sans-serif;
 }
 
+.menu-toggle-btn {
+    background: none; /* 无背景 */
+    border: none; /* 无边框 */
+    font-size: 24px; /* 按钮大小 */
+    color: black; /* 按钮颜色 */
+    cursor: pointer; /* 鼠标悬停变成手型 */
+    flex-shrink: 0; /* 不允许按钮缩小 */
+}
+
+
 
 /* Responsive: Show horizontal-navbar on mobile */
 @media (max-width: 768px) {
