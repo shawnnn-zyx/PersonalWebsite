@@ -107,14 +107,12 @@
 /* 默认隐藏水平导航栏，显示垂直导航栏 */
 .horizontal-navbar {
     display: none;
-    background-color: red; /* 临时测试背景色 */
 }
 
 /* 768px 以下设备切换导航栏 */
 @media (max-width: 768px) {
     .horizontal-navbar {
         display: block !important; /* 显示水平导航栏 */
-        background: yellow !important; /* 测试背景色 */
     }
 
     .navbar {
