@@ -104,4 +104,22 @@
 
 
 
+.horizontal-navbar {
+    display: none; /* 默认隐藏横向导航栏 */
+}
+
+.navbar {
+    display: flex; /* 默认显示竖向导航栏 */
+}
+
+@media (max-width: 768px) {
+    .horizontal-navbar {
+        display: block; /* 显示横向导航栏 */
+    }
+
+    .navbar {
+        display: none; /* 隐藏竖向导航栏 */
+    }
+}
+
 
