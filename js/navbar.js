@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const dropdownBtns = document.querySelectorAll(".dropdown-btn");
-
+    const horizontalNavbar = document.querySelector(".horizontal-navbar");
+    const navbar = document.querySelector(".navbar");
 
     dropdownBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -23,6 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // 模拟设备宽度检测
+    if (window.innerWidth > 768) {
+        horizontalNavbar.style.display = "none"; // 隐藏水平导航栏
+        navbar.style.display = "flex"; // 显示竖直导航栏
+    }
 });
 
 
