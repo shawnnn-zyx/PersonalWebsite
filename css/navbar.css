@@ -145,7 +145,7 @@
     flex-direction: column;
     gap: 10px;
     background-color: white;
-    padding: 10px;
+    padding: 10px 50px 0px;
     position: absolute; /* 浮动定位 */
     top: 60px; /* 根据菜单按钮位置调整 */
     left: 0;
