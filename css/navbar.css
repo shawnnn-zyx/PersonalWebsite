@@ -139,6 +139,24 @@
     padding: 25px 50px 0; /* 上25px，左右50px，下0 */
 }
 
+/* 默认隐藏移动版的 sidebar */
+.horizontal-navbar .sidebar {
+    display: none; /* 仅隐藏移动版的 sidebar */
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+    position: absolute; /* 浮动定位 */
+    top: 60px; /* 根据菜单按钮位置调整 */
+    right: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.horizontal-navbar .sidebar.active {
+    display: flex; /* 显示为弹性布局 */
+}
+
 .horizontal-top {
     display: flex;
     justify-content: space-between;
@@ -150,7 +168,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 0px 10px;
-    gap: clamp(10px, 5%, 50px);
     width: 100%;
 }
 

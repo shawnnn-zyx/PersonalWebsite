@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+    const menuToggle = document.querySelector(".menu-toggle-btn");
+    const mobileSidebar = document.querySelector(".horizontal-navbar .sidebar");
+
+    if (menuToggle && mobileSidebar) {
+        menuToggle.addEventListener("click", () => {
+            mobileSidebar.classList.toggle("active");
+        });
+    }
+
+    // 点击外部时关闭移动菜单
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".horizontal-navbar")) {
+            mobileSidebar.classList.remove("active");
+        }
+    });
 
     dropdownBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
