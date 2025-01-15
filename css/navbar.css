@@ -68,6 +68,7 @@
     padding: 10px 0;
     transition: none;
     width: 100%;
+    font-size: 18px;
 }
 
 
@@ -143,11 +144,9 @@
 .horizontal-navbar .sidebar {
     display: none; /* 仅隐藏移动版的 sidebar */
     flex-direction: column;
-    gap: 10px;
     background-color: white;
     padding: 10px 50px 0px;
     position: absolute; /* 浮动定位 */
-    top: 60px; /* 根据菜单按钮位置调整 */
     left: 0;
     width: 100%;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
