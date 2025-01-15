@@ -202,4 +202,10 @@
     .navbar {
         display: none !important;
     }
+
+    .content-main-page,
+    .content-project-page {
+        padding: 80px 50px 50px 50px; /* 上、右、下、左内边距 */
+        box-sizing: border-box; /* 确保 padding 包含在宽度内 */
+    }
 }
