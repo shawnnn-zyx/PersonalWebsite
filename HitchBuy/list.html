@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發布您的許願清單 - HitchBuy</title>
+    <style>
+        /* 基本的 CSS 樣式，讓頁面看起來更整潔 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 35px 45px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            box-sizing: border-box; /* 確保內邊距不增加寬度 */
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50; /* HitchBuy 的綠色主題 */
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+            font-size: 0.95em;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="url"],
+        textarea {
+            width: calc(100% - 22px); /* 考慮到 padding 和 border */
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="url"]:focus,
+        textarea:focus {
+            border-color: #4CAF50; /* 聚焦時邊框顏色變化 */
+            outline: none;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield; /* Firefox 移除數字輸入框的上下箭頭 */
+        }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .total-price-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #007bff; /* 藍色用於價格 */
+            padding: 10px;
+            background-color: #e9f5ff;
+            border-radius: 6px;
+            text-align: right;
+        }
+        button {
+            width: 100%;
+            padding: 15px 25px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .nav-link {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .nav-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav-link a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>發布您的許願清單</h1>
+        <form id="wishlistForm">
+            <div class="form-group">
+                <label for="itemName">商品名稱:</label>
+                <input type="text" id="itemName" required placeholder="例如：Apple AirPods Pro 2代">
+            </div>
+
+            <div class="form-group">
+                <label for="unitPrice">單價 (美元 USD):</label>
+                <input type="number" id="unitPrice" step="0.01" min="0" required placeholder="例如：249.00">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">數量:</label>
+                <input type="number" id="quantity" min="1" required value="1">
+            </div>
+
+            <div class="form-group">
+                <label>總價 (美元 USD):</label>
+                <div id="totalPriceDisplay" class="total-price-display">0.00</div>
+            </div>
+
+            <div class="form-group">
+                <label for="purchaseLink">參考購買連結:</label>
+                <input type="url" id="purchaseLink" placeholder="例如：https://www.apple.com/airpods-pro/" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">您的所在地 (大致城市/地區):</label>
+                <input type="text" id="location" required placeholder="例如：台北市、紐約曼哈頓">
+            </div>
+
+            <div class="form-group">
+                <label for="description">商品描述/備註:</label>
+                <textarea id="description" rows="5" placeholder="顏色、尺寸、型號、特殊要求等..."></textarea>
+            </div>
+
+            <button type="submit">發布許願清單</button>
+        </form>
+
+        <div class="nav-link">
+            <a href="browse.html">瀏覽所有許願清單 (代購方入口)</a>
+        </div>
+    </div>
+
+    <script src="list.js"></script>
+</body>
+</html>
