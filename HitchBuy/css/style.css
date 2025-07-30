@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1200px; /* 控制內容最大寬度 */
     margin: 0 auto;
     padding: 20px;
 }
@@ -79,46 +79,101 @@ body {
     cursor: pointer;
 }
 
-/* Main Content Area Layout */
+/* Main Content Area Layout - 使用 Flexbox 實現左右兩欄的彈性佈局 */
 .main-content {
     display: flex;
     flex-grow: 1; /* Allow main content to take remaining height */
+    /* 預設為左右並排，地圖佔比更大 */
 }
 
 .left-panel {
-    flex: 1; /* Takes 1 part of available space */
-    padding: 40px;
+    flex: 1; /* 左側面板佔 1 份的彈性空間 */
+    max-width: 600px; /* 設定最大寬度，防止在大螢幕上過寬 */
+    width: 100%; /* 確保在flex item中能佔據可用空間 */
+    padding: 40px; /* 內邊距保持相對固定 */
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    overflow-y: auto; /* Allow scrolling if content overflows */
+    overflow-y: auto; /* 允許內容垂直滾動 */
+    display: flex;
+    flex-direction: column; /* 左側面板內的元素垂直堆疊 */
 }
 
 #map {
-    flex: 2; /* Takes 2 parts of available space, making it wider */
+    flex: 2; /* 右側地圖佔 2 份的彈性空間，讓地圖比左側寬一倍 */
+    min-height: 50vh; /* 給地圖一個基於視窗高度的最小高度，使其在載入時就有足夠高度 */
     background-color: #e0e0e0;
-    min-height: 100%; /* Ensure map fills its container height */
 }
 
-/* Hero Section (Left Panel) */
+
+/* Hero Section (左上區塊) - 圖片背景和內容的彈性調整 */
 .hero-section {
-    text-align: center;
+    /* 請確保您的圖片路徑正確。如果圖片在 HitchBuy_Project/img/background-image.jpg，則路徑應是 url('../img/background-image.jpg') */
+    background-image: url('../img/background-image.jpg'); 
+    background-size: cover; /* 圖片覆蓋整個容器 */
+    background-position: center; /* 圖片居中 */
+    color: white; /* 文字顏色以配合深色背景 */
+    padding: 10% 5%; /* 使用百分比內邊距，使其隨寬度調整 */
     margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* 確保內部文字居中 */
 }
+
 .hero-section h1 {
-    font-size: 2.8em;
-    color: #4CAF50;
+    font-size: clamp(1.8em, 4vw, 2.8em); /* 使用 clamp 函數實現響應式字體大小 */
+    color: white;
     margin-bottom: 15px;
+    /* 移除動畫，或在實際開發中再添加 */
+    animation: none; 
 }
 .hero-section p {
-    font-size: 1.1em;
-    color: #666;
+    font-size: clamp(0.9em, 2vw, 1.1em); /* 響應式字體大小 */
+    color: #eee;
     margin-bottom: 30px;
+    max-width: 600px; /* 防止文字在一行過長 */
+}
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap; /* 允許按鈕換行 */
+    gap: 20px; /* 按鈕間距 */
+    justify-content: center; /* 按鈕組水平居中 */
+    width: 100%; /* 確保按鈕組能佔滿父容器寬度 */
 }
 .hero-buttons .btn {
-    margin: 0 10px 20px 10px;
+    padding: 10px 20px; /* 上下 10px，左右 20px，與設計圖 padding 匹配 */
+    font-size: clamp(0.9em, 2vw, 1.2em); /* 響應式字體大小 */
+    border-radius: 30px; /* 更大的圓角使其接近橢圓形 */
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 半透明白色邊框 */
+    backdrop-filter: blur(5px); /* 輕微的模糊效果 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px; /* 設定最小寬度，防止按鈕過小 */
+    flex: 1; /* 讓按鈕在一定範圍內彈性伸縮 */
+    max-width: 200px; /* 限制單個按鈕最大寬度 */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 添加過渡效果 */
+}
+.hero-buttons .btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+.hero-buttons .btn:active {
+    transform: translateY(0);
 }
 
-/* How It Works Section (Left Panel) */
+
+/* How It Works Section (左下區塊) - 彈性卡片佈局 */
+.how-it-works {
+    margin-top: 40px;
+    padding-bottom: 20px; /* 底部填充 */
+}
 .how-it-works h2 {
     font-size: 1.8em;
     color: #333;
@@ -127,14 +182,23 @@ body {
 }
 .how-it-works-cards {
     display: flex;
-    flex-direction: column; /* Stack cards vertically */
-    gap: 20px;
+    flex-wrap: wrap; /* 允許卡片換行 */
+    gap: 20px; /* 卡片之間的間距，與設計圖中的 Gap 20px 匹配 */
+    justify-content: center; /* 讓卡片在容器中居中 */
 }
+
 .work-card {
     background-color: #f9f9f9;
-    padding: 25px;
+    /* 這裡使用 flex-basis 配合 calc() 實現彈性寬度 */
+    /* 目標是讓它們在大螢幕上兩兩並排，並隨螢幕縮小 */
+    flex-basis: calc(50% - 10px); /* 兩欄佈局，扣除一半的 gap (20px / 2 = 10px) */
+    max-width: 337px; /* 但不超過設計圖中的最大寬度 */
+    min-height: 212px; /* 最小高度，確保內容少時也有足夠高度 */
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+    text-align: left;
+    padding: 22px 28px; /* 上下 22px, 左右 28px，與設計圖 Padding 匹配 */
+    box-sizing: border-box; /* 確保 padding 不會增加總寬度，這很重要 */
 }
 .work-card h3 {
     color: #007bff;
@@ -152,7 +216,9 @@ body {
     color: #555;
 }
 
-/* Button Styles */
+
+/* Button General Styles (不再針對 hero-buttons .btn 單獨定義，改為通用) */
+/* 這些是通用按鈕樣式，hero-buttons .btn 會覆蓋部分 */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -187,48 +253,121 @@ body {
     transform: translateY(-2px);
 }
 
-/* Responsive Design */
+/* Form General Styles (用於 make-wish-stepX.html 頁面) */
+.form-section {
+    background-color: #ffffff;
+    padding: 35px 45px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+    margin: 50px auto; /* 讓表單居中 */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+    width: calc(100% - 22px);
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* 響應式設計 - 媒體查詢調整佈局 */
 @media (max-width: 992px) {
+    /* 在中等螢幕（例如平板橫向）下，左右兩欄變成垂直堆疊 */
     .main-content {
-        flex-direction: column; /* Stack left panel and map vertically on smaller screens */
+        flex-direction: column;
     }
     .left-panel {
-        order: 2; /* Move left panel below map on small screens */
-        padding: 30px;
+        order: 2; /* 讓左側面板在地圖下方 */
+        max-width: 100%; /* 佔據所有可用寬度 */
+        padding: 30px; /* 調整內邊距 */
     }
     #map {
-        flex: none; /* Remove flex sizing */
-        height: 60vh; /* Give map a fixed height on smaller screens */
-        order: 1; /* Move map above left panel on small screens */
+        flex: none; /* 取消 flex 比例 */
+        height: 50vh; /* 設定一個基於視窗高度的地圖高度 */
+        order: 1; /* 讓地圖在左側面板上方 */
     }
-    .hero-section h1 {
-        font-size: 2.2em;
+    .hero-section {
+        padding: 8% 4%; /* 進一步調整 padding */
+        min-height: 200px;
     }
-    .hero-section p {
-        font-size: 1em;
+    .hero-buttons {
+        gap: 15px; /* 按鈕間距稍微縮小 */
     }
-    .navbar .nav-links {
-        display: none; /* Hide main nav links on small screens for simplicity */
+    .hero-buttons .btn {
+        min-width: unset; /* 取消最小寬度，讓按鈕更自由伸縮 */
+        flex: 1 1 auto; /* 自動調整大小 */
     }
-    .navbar .nav-group {
-        flex-grow: 1;
-        justify-content: flex-end;
+    .how-it-works-cards {
+        gap: 15px; /* 卡片間距稍微縮小 */
     }
-    .navbar .logo {
-        flex-grow: 1;
-        text-align: left;
+    .work-card {
+        flex-basis: calc(50% - 7.5px); /* 在中等螢幕下，調整 gap 考慮 */
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+    /* 在小螢幕（例如手機）下，進一步調整 */
     .left-panel {
-        padding: 20px;
+        padding: 20px; /* 減小內邊距 */
+    }
+    .hero-section {
+        padding: 10% 5%; /* 手機上可能需要更大比例的 padding */
+    }
+    .hero-buttons {
+        flex-direction: column; /* 手機上按鈕垂直堆疊 */
+        gap: 10px; /* 間距更小 */
     }
     .hero-buttons .btn {
-        display: block;
-        margin: 10px auto;
+        width: 100%; /* 手機上按鈕佔滿寬度 */
+        max-width: none; /* 移除最大寬度限制 */
+    }
+    .how-it-works-cards {
+        flex-direction: column; /* 卡片垂直堆疊 */
+        gap: 15px;
     }
     .work-card {
-        padding: 20px;
+        flex-basis: 100%; /* 卡片佔滿寬度 */
+        max-width: none; /* 移除最大寬度限制 */
     }
 }
