@@ -1,181 +1,71 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HitchBuy - 您的全球代購媒合平台</title>
+    <title>HitchBuy - Your Global Personal Shopping Platform</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* 針對主頁的特定樣式 */
-        .hero-section {
-            background-color: #e6f7ed; /* 淺綠色背景 */
-            padding: 80px 20px;
-            text-align: center;
-            color: #333;
-        }
-        .hero-section h1 {
-            font-size: 3.5em;
-            color: #4CAF50;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-out;
-        }
-        .hero-section p {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease-out;
-            animation-delay: 0.3s;
-            animation-fill-mode: both;
-        }
-        .hero-buttons .btn {
-            margin: 0 15px;
-            animation: zoomIn 0.8s ease-out;
-            animation-delay: 0.6s;
-            animation-fill-mode: both;
-        }
-        .info-section {
-            display: flex;
-            justify-content: space-around;
-            padding: 60px 20px;
-            background-color: #fff;
-            flex-wrap: wrap; /* 響應式佈局 */
-            gap: 30px;
-        }
-        .info-card {
-            flex-basis: calc(33% - 40px); /* 三欄佈局，考慮間距 */
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            min-width: 280px; /* 最小寬度，防止過窄 */
-        }
-        .info-card h3 {
-            color: #4CAF50;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-        .info-card p {
-            font-size: 1.1em;
-            color: #666;
-        }
-        .info-card ol {
-            list-style-position: inside;
-            text-align: left;
-            padding-left: 0;
-        }
-        .info-card li {
-            margin-bottom: 10px;
-            color: #555;
-        }
-        .cta-section {
-            background-color: #4CAF50;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .cta-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .cta-section p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        .cta-section .btn {
-            background-color: white;
-            color: #4CAF50;
-        }
-        .cta-section .btn:hover {
-            background-color: #eee;
-            color: #45a049;
-        }
-
-        /* 動畫效果 */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* 響應式設計 */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5em;
-            }
-            .hero-section p {
-                font-size: 1.1em;
-            }
-            .hero-buttons .btn {
-                display: block;
-                margin: 15px auto;
-            }
-            .info-card {
-                flex-basis: 100%; /* 小螢幕下單欄顯示 */
-            }
-        }
-    </style>
 </head>
 <body>
+    <!-- Navbar Region -->
     <nav class="navbar">
         <a href="index.html" class="logo">HitchBuy</a>
-        <div class="nav-links">
-            <a href="index.html">主頁</a>
-            <a href="#">關於我們</a>
-            <a href="#">常見問題</a>
-            <a href="#">聊天室</a>
+        <div class="nav-group">
+            <span class="lang-currency">English/USD</span>
+            <div class="nav-links">
+                <a href="#">Wish</a>
+                <a href="#">Earn</a>
+                <a href="#">Chat</a>
+            </div>
+            <div class="user-avatar">JD</div> <!-- Placeholder for User Avatar -->
         </div>
     </nav>
 
-    <header class="hero-section">
-        <h1>您的願望，旅人使命。</h1>
-        <p>HitchBuy 連結全球的買家與旅行者，輕鬆實現您跨國購物的願望，同時讓旅行者賺取額外收入！</p>
-        <div class="hero-buttons">
-            <a href="make-wish-step1.html" class="btn btn-primary">我要許願 (Make a Wish)</a>
-            <a href="browse.html" class="btn btn-secondary">我要代購 (Easy Earn)</a>
-        </div>
-    </header>
+    <!-- Main Content Area (Left Panel + Right Map) -->
+    <div class="main-content">
+        <!-- Left Panel Region -->
+        <div class="left-panel">
+            <header class="hero-section">
+                <h1>Your Wish, A Traveler's Mission.</h1>
+                <p>HitchBuy connects global shoppers with travelers, making cross-border purchases effortless while helping travelers earn extra income!</p>
+                <div class="hero-buttons">
+                    <a href="make-wish-step1.html" class="btn btn-primary">Make a Wish</a>
+                    <a href="browse.html" class="btn btn-secondary">Easy Earn</a>
+                </div>
+            </header>
 
-    <section class="info-section container">
-        <div class="info-card">
-            <h3>如何許願 (Make a Wish)</h3>
-            <ol>
-                <li>列出您想購買的商品 [cite: 36]</li>
-                <li>與接單代購方確認商品細節 [cite: 37]</li>
-                <li>在您指定日期前收到商品 [cite: 38]</li>
-            </ol>
-        </div>
-        <div class="info-card">
-            <h3>如何輕鬆賺取 (Easy Earn)</h3>
-            <ol>
-                <li>找到符合您航班目的地的願望 [cite: 32]</li>
-                <li>在購買前與許願者見面溝通 [cite: 33]</li>
-                <li>在您回程航班後交付商品 [cite: 34]</li>
-            </ol>
-        </div>
-        <div class="info-card">
-            <h3>HitchBuy 的優勢</h3>
-            <p>透明金流託管，保障交易安全。</p>
-            <p>客製化許願，滿足獨特需求。</p>
-            <p>利用旅人順路，節省國際運費。</p>
-        </div>
-    </section>
+            <section class="how-it-works">
+                <h2>How HitchBuy Works</h2>
 
-    <section class="cta-section">
-        <h2>準備好開始您的HitchBuy之旅了嗎？</h2>
-        <p>無論您是想購買海外心儀商品，還是想在旅途中賺取外快，HitchBuy 都是您的最佳選擇！</p>
-        <a href="make-wish-step1.html" class="btn">立即許願</a>
-        <a href="browse.html" class="btn" style="background-color: #007bff; margin-left: 15px;">開始賺取</a>
-    </section>
+                <div class="how-it-works-cards">
+                    <div class="work-card">
+                        <h3>For Wishers (Buyers)</h3>
+                        <ol>
+                            <li>List the product you want to get.</li>
+                            <li>Meet the traveler (HitchBuyer) before purchasing (optional for complex items).</li>
+                            <li>Receive your item by your requested date.</li>
+                        </ol>
+                    </div>
 
-    </body>
+                    <div class="work-card">
+                        <h3>For HitchBuyers (Travelers)</h3>
+                        <ol>
+                            <li>Find a wish that fits your flight destination.</li>
+                            <li>Meet the wisher before purchasing (optional for complex items).</li>
+                            <li>Deliver the item when you fly back.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Google Map Region -->
+        <div id="map"></div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="app.js"></script>
+    <!-- Google Maps JavaScript API Key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheUJbAnpbTvKHrcE0K0HYIetzJwrZQwQ&callback=initMap"></script>
+</body>
 </html>

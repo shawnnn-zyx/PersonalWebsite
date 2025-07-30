@@ -1,13 +1,16 @@
 /* style.css */
 
-/* 全局樣式 */
+/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* 輕微的灰色背景 */
+    background-color: #f4f7f6; /* Light grey background */
     color: #333;
     line-height: 1.6;
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack navbar on top of main content */
+    min-height: 100vh; /* Ensure full viewport height */
 }
 
 .container {
@@ -16,7 +19,7 @@ body {
     padding: 20px;
 }
 
-/* 導航欄樣式 */
+/* Navbar Styles */
 .navbar {
     background-color: #fff;
     padding: 15px 20px;
@@ -25,13 +28,29 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-shrink: 0; /* Prevent navbar from shrinking */
 }
 
 .navbar .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: #4CAF50; /* HitchBuy 品牌綠 */
+    color: #4CAF50; /* HitchBuy brand green */
     text-decoration: none;
+    margin-right: 20px;
+}
+
+.navbar .nav-group {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-group .lang-currency {
+    font-size: 0.9em;
+    color: #777;
+    margin-right: 20px;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
 }
 
 .navbar .nav-links a {
@@ -46,7 +65,94 @@ body {
     color: #4CAF50;
 }
 
-/* 按鈕基本樣式 */
+.navbar .user-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Main Content Area Layout */
+.main-content {
+    display: flex;
+    flex-grow: 1; /* Allow main content to take remaining height */
+}
+
+.left-panel {
+    flex: 1; /* Takes 1 part of available space */
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+#map {
+    flex: 2; /* Takes 2 parts of available space, making it wider */
+    background-color: #e0e0e0;
+    min-height: 100%; /* Ensure map fills its container height */
+}
+
+/* Hero Section (Left Panel) */
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.hero-section h1 {
+    font-size: 2.8em;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+.hero-section p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+.hero-buttons .btn {
+    margin: 0 10px 20px 10px;
+}
+
+/* How It Works Section (Left Panel) */
+.how-it-works h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.how-it-works-cards {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    gap: 20px;
+}
+.work-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+}
+.work-card h3 {
+    color: #007bff;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.work-card ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin: 0;
+}
+.work-card li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* Button Styles */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -81,59 +187,48 @@ body {
     transform: translateY(-2px);
 }
 
-/* 表單通用樣式 */
-.form-section {
-    background-color: #ffffff;
-    padding: 35px 45px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 650px;
-    box-sizing: border-box;
-    margin: 50px auto; /* 讓表單居中 */
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column; /* Stack left panel and map vertically on smaller screens */
+    }
+    .left-panel {
+        order: 2; /* Move left panel below map on small screens */
+        padding: 30px;
+    }
+    #map {
+        flex: none; /* Remove flex sizing */
+        height: 60vh; /* Give map a fixed height on smaller screens */
+        order: 1; /* Move map above left panel on small screens */
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section p {
+        font-size: 1em;
+    }
+    .navbar .nav-links {
+        display: none; /* Hide main nav links on small screens for simplicity */
+    }
+    .navbar .nav-group {
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+    .navbar .logo {
+        flex-grow: 1;
+        text-align: left;
+    }
 }
 
-.form-group {
-    margin-bottom: 25px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-    font-size: 0.95em;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="url"],
-textarea,
-select {
-    width: calc(100% - 22px);
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="url"]:focus,
-textarea:focus,
-select:focus {
-    border-color: #4CAF50;
-    outline: none;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+@media (max-width: 576px) {
+    .left-panel {
+        padding: 20px;
+    }
+    .hero-buttons .btn {
+        display: block;
+        margin: 10px auto;
+    }
+    .work-card {
+        padding: 20px;
+    }
 }
