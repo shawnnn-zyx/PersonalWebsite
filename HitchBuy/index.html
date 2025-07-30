@@ -1,247 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
-    <!-- Website Icon -->
-    <link rel="icon" type="image/x-icon" href="web_icon/yzx_web_icon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="web_icon/yzx_web_icon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="web_icon/yzx_web_icon-32x32.png">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Shawn Zheng">
-    <meta property="og:description" content="Join Shawn Zheng in shaping the future of interactive experiences—specializing in game development, interactive design, and digital marketing to deliver comprehensive solutions for your creative projects.">
-    <meta property="og:image" content="https://project.shawnzyx.me/assets/img/Project_PreviewIMG_EmbersOfThePalace.jpg">
-    <meta property="og:url" content="https://project.shawnzyx.me/">
-    <meta property="og:type" content="website">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shawn Zheng</title>
-    <link rel="stylesheet" href="css/globals.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <script defer src="js/navbar.js"></script>
+    <title>HitchBuy - 您的全球代購媒合平台</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 針對主頁的特定樣式 */
+        .hero-section {
+            background-color: #e6f7ed; /* 淺綠色背景 */
+            padding: 80px 20px;
+            text-align: center;
+            color: #333;
+        }
+        .hero-section h1 {
+            font-size: 3.5em;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero-section p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out;
+            animation-delay: 0.3s;
+            animation-fill-mode: both;
+        }
+        .hero-buttons .btn {
+            margin: 0 15px;
+            animation: zoomIn 0.8s ease-out;
+            animation-delay: 0.6s;
+            animation-fill-mode: both;
+        }
+        .info-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px 20px;
+            background-color: #fff;
+            flex-wrap: wrap; /* 響應式佈局 */
+            gap: 30px;
+        }
+        .info-card {
+            flex-basis: calc(33% - 40px); /* 三欄佈局，考慮間距 */
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            min-width: 280px; /* 最小寬度，防止過窄 */
+        }
+        .info-card h3 {
+            color: #4CAF50;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .info-card p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        .info-card ol {
+            list-style-position: inside;
+            text-align: left;
+            padding-left: 0;
+        }
+        .info-card li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .cta-section {
+            background-color: #4CAF50;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .cta-section .btn {
+            background-color: white;
+            color: #4CAF50;
+        }
+        .cta-section .btn:hover {
+            background-color: #eee;
+            color: #45a049;
+        }
+
+        /* 動畫效果 */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1.1em;
+            }
+            .hero-buttons .btn {
+                display: block;
+                margin: 15px auto;
+            }
+            .info-card {
+                flex-basis: 100%; /* 小螢幕下單欄顯示 */
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="main-layout">
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="index.html" class="name-title">Shawn Zheng</a>
-        <ul class="sidebar">
-            <!-- Game Design Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Game Design</button>
-                <ul class="dropdown">
-                    <li><a href="project1.html">Shopping Maniac</a></li>
-                    <li><a href="project5.html">KingdomClash</a></li>
-                    <li><a href="project9.html">Embers of the Palace</a></li>
-                </ul>
-            </li>
-
-            <!-- Future Product Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Future Product</button>
-                <ul class="dropdown">
-                    <li><a href="project7.html">Afterlife Package</a></li>
-                    <li><a href="project11.html">Whatever You Want Vending Machine</a></li>
-                </ul>
-            </li>
-
-            <!-- Storytelling Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Storytelling</button>
-                <ul class="dropdown">
-                    <li><a href="project2.html">Afterlife</a></li>
-                    <li><a href="project3.html">The Great Exploration</a></li>
-                    <li><a href="project4.html">Songs of My Life</a></li>
-                    <li><a href="project10.html">Endless Bedrooms</a></li>
-                </ul>
-            </li>
-
-            <!-- Exhibition Design Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Exhibition Design</button>
-                <ul class="dropdown">
-                    <li><a href="project12.html">Statue of Liberty</a></li>
-                </ul>
-            </li>
-
-            <!-- Website Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Website</button>
-                <ul class="dropdown">
-                    <li><a href="project6.html">HuaWoo Diary</a></li>
-                    <li><a href="project8.html">KingdomClash Page</a></li>
-                </ul>
-            </li>
-            
-            <!-- About -->
-            <li class="sidebar-item">
-                <a href="about.html">About</a>
-            </li>
-        </ul>
-        <div class="icons">
-            <a href="mailto:yz10947@nyu.edu"><img src="assets/icon/email.png" alt="Email"></a>
-            <a href="https://www.instagram.com/shawn60809/" target="_blank"><img src="assets/icon/instagram.png" alt="Instagram"></a>
-            <a href="https://www.linkedin.com/in/shawnzyx/" target="_blank"><img src="assets/icon/linkedin.png" alt="LinkedIn"></a>
+    <nav class="navbar">
+        <a href="index.html" class="logo">HitchBuy</a>
+        <div class="nav-links">
+            <a href="index.html">主頁</a>
+            <a href="#">關於我們</a>
+            <a href="#">常見問題</a>
+            <a href="#">聊天室</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- Horizontal Navigation Bar -->
-    <div class="horizontal-navbar">
-        <div class="horizontal-top">
-            <div class="horizontal-menu">
-                <a href="index.html" class="horizontal-menu-title">Shawn Zheng</a>
-                <button class="menu-toggle-btn">&#8801;</button>
-            </div>
+    <header class="hero-section">
+        <h1>您的願望，旅人使命。</h1>
+        <p>HitchBuy 連結全球的買家與旅行者，輕鬆實現您跨國購物的願望，同時讓旅行者賺取額外收入！</p>
+        <div class="hero-buttons">
+            <a href="make-wish-step1.html" class="btn btn-primary">我要許願 (Make a Wish)</a>
+            <a href="browse.html" class="btn btn-secondary">我要代購 (Easy Earn)</a>
         </div>
-        <ul class="sidebar hidden">
-            <!-- Game Design Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Game Design</button>
-                <ul class="dropdown">
-                    <li><a href="project1.html">Shopping Maniac</a></li>
-                    <li><a href="project5.html">KingdomClash</a></li>
-                    <li><a href="project9.html">Embers of the Palace</a></li>
-                </ul>
-            </li>
+    </header>
 
-            <!-- Future Product Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Future Product</button>
-                <ul class="dropdown">
-                    <li><a href="project7.html">Afterlife Package</a></li>
-                    <li><a href="project11.html">Whatever You Want Vending Machine</a></li>
-                </ul>
-            </li>
-
-            <!-- Storytelling Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Storytelling</button>
-                <ul class="dropdown">
-                    <li><a href="project2.html">Afterlife</a></li>
-                    <li><a href="project3.html">The Great Exploration</a></li>
-                    <li><a href="project4.html">Songs of My Life</a></li>
-                    <li><a href="project10.html">Endless Bedrooms</a></li>
-                </ul>
-            </li>
-
-            <!-- Exhibition Design Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Exhibition Design</button>
-                <ul class="dropdown">
-                    <li><a href="project12.html">Statue of Liberty</a></li>
-                </ul>
-            </li>
-
-            <!-- Website Section -->
-            <li class="sidebar-item">
-                <button class="dropdown-btn">Website</button>
-                <ul class="dropdown">
-                    <li><a href="project6.html">HuaWoo Diary</a></li>
-                    <li><a href="project8.html">KingdomClash Page</a></li>
-                </ul>
-            </li>
-            
-            <!-- About -->
-            <li class="sidebar-item">
-                <a href="about.html">About</a>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Main Content -->
-    <div class="content-main-page">
-
-        <div class="project-origin">
-            <a href="project9.html">
-                 <img class="project-image" src="assets/img/Project_EmbersOfThePalace.jpg" alt="Embers of the Palace">
-            </a>
-            <div class="project-details">
-                <div class="project-title">Embers of the Palace</div>
-                <div class="project-tags">
-                    <span class="tag">Blender</span>
-                    <span class="tag">UE5</span>
-                    <span class="tag">Digital Reconstruction</span>
-                </div>
-            </div>
+    <section class="info-section container">
+        <div class="info-card">
+            <h3>如何許願 (Make a Wish)</h3>
+            <ol>
+                <li>列出您想購買的商品 [cite: 36]</li>
+                <li>與接單代購方確認商品細節 [cite: 37]</li>
+                <li>在您指定日期前收到商品 [cite: 38]</li>
+            </ol>
         </div>
-
-        <div class="project-origin">
-            <a href="project1.html">
-                 <img class="project-image" src="assets/img/Project_shopping_maniac.jpg" alt="Shopping Maniac">
-            </a>
-            <div class="project-details">
-                <div class="project-title">Shopping Maniac</div>
-                <div class="project-tags">
-                    <span class="tag">Interactive Game</span>
-                    <span class="tag">Unity</span>
-                    <span class="tag">Arduino</span>
-                </div>
-            </div>
+        <div class="info-card">
+            <h3>如何輕鬆賺取 (Easy Earn)</h3>
+            <ol>
+                <li>找到符合您航班目的地的願望 [cite: 32]</li>
+                <li>在購買前與許願者見面溝通 [cite: 33]</li>
+                <li>在您回程航班後交付商品 [cite: 34]</li>
+            </ol>
         </div>
-
-        <div class="project-origin">
-            <a href="project7.html">
-                <img class="project-image" src="assets/img/Project_Afterlife.jpg" alt="Afterlife">
-            </a>
-            <div class="project-details">
-                <div class="project-title">Afterlife</div>
-                <div class="project-tags">
-                    <span class="tag">Speculative Future</span>
-                    <span class="tag">UE5</span>
-                    <span class="tag">Architecture</span>
-                </div>
-            </div>
+        <div class="info-card">
+            <h3>HitchBuy 的優勢</h3>
+            <p>透明金流託管，保障交易安全。</p>
+            <p>客製化許願，滿足獨特需求。</p>
+            <p>利用旅人順路，節省國際運費。</p>
         </div>
+    </section>
 
-        <div class="project-origin">
-            <a href="project3.html">
-                <img class="project-image" src="assets/img/Project_The Great Exploration.jpg" alt="The Great Exploration">
-            </a>
-            <div class="project-details">
-                <div class="project-title">The Great Exploration</div>
-                <div class="project-tags">
-                    <span class="tag">Runway</span>
-                    <span class="tag">Storytelling</span>
-                    <span class="tag">Adobe Premiere</span>
-                </div>
-            </div>
-        </div>
+    <section class="cta-section">
+        <h2>準備好開始您的HitchBuy之旅了嗎？</h2>
+        <p>無論您是想購買海外心儀商品，還是想在旅途中賺取外快，HitchBuy 都是您的最佳選擇！</p>
+        <a href="make-wish-step1.html" class="btn">立即許願</a>
+        <a href="browse.html" class="btn" style="background-color: #007bff; margin-left: 15px;">開始賺取</a>
+    </section>
 
-        <div class="project-origin">
-            <a href="project5.html">
-                <img class="project-image" src="assets/img/Project_KingdomClash.jpg" alt="KingdomClash">
-            </a>
-            <div class="project-details">
-                <div class="project-title">KingdomClash</div>
-                <div class="project-tags">
-                    <span class="tag">Game Level Design</span>
-                    <span class="tag">User Research</span>
-                    <span class="tag">Marketing</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-origin">
-            <a href="project6.html">
-                <img class="project-image" src="assets/img/Project_HuaWooDiary.jpg" alt="HuaWoo Diary">
-            </a>
-            <div class="project-details">
-                <div class="project-title">HuaWoo Diary</div>
-                <div class="project-tags">
-                    <span class="tag">Website Design</span>
-                    <span class="tag">Figma</span>
-                    <span class="tag">CRM</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add other projects in similar structure -->
-        <div class="about-summary">
-            <p>Shawn Zheng is an interaction designer and digital marketing strategist with seven years of experience in the gaming industry, blending creative technology with storytelling. He is currently pursuing a Master’s at NYU's Interactive Telecommunications Program, focusing on exploring interactions between virtual and real worlds.</p>
-            <p>See you in the near future.</p>
-        </div>
-    </div>
-</div>
-</body>
+    </body>
 </html>
