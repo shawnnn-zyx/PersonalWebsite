@@ -1,4 +1,4 @@
-// app.js
+// js/app.js
 
 // --- Data Storage and Management ---
 const WISHLIST_STORAGE_KEY = 'hitchbuyWishlists';
@@ -114,16 +114,68 @@ function initMap() {
         return;
     }
 
+    // Default center if geolocation fails or is denied
+    const defaultCenter = { lat: 25.0330, lng: 121.5654 }; // Taipei City
+
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 25.0330, lng: 121.5654 }, // Default center: Taipei
+        center: defaultCenter, // Start with default center
         zoom: 8,
         fullscreenControl: false,
         mapTypeControl: false,
         streetViewControl: false
     });
 
-    displayWishlistsOnMap(); // Display wishlists on the map
+    // Try to get user's current location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                map.setCenter(userLocation); // Set map center to user's location
+                map.setZoom(12); // Adjust zoom level for a closer view of the user's area
+                console.log("Map centered on user's location:", userLocation);
+
+                // Optionally add a marker for the user's current location
+                new google.maps.Marker({
+                    position: userLocation,
+                    map: map,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 8,
+                        fillColor: '#007bff',
+                        fillOpacity: 0.8,
+                        strokeWeight: 0
+                    },
+                    title: 'Your Location'
+                });
+
+                displayWishlistsOnMap(); // Display wishlists after centering
+            },
+            () => {
+                // Geolocation failed or denied
+                handleLocationError(true, map, defaultCenter);
+                displayWishlistsOnMap(); // Still display wishlists even if geolocation fails
+            }
+        );
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, map, defaultCenter);
+        displayWishlistsOnMap(); // Still display wishlists
+    }
 }
+
+function handleLocationError(browserHasGeolocation, map, pos) {
+    console.warn(
+        browserHasGeolocation
+            ? 'Error: The Geolocation service failed, or you denied permission.'
+            : 'Error: Your browser doesn\'t support geolocation.'
+    );
+    // Map remains centered at the default position (already set)
+    // You can optionally add a message to the user here.
+}
+
 
 // Function to display wishlists as markers on the map
 function displayWishlistsOnMap() {
@@ -202,8 +254,6 @@ function viewWishlistDetails(itemId) {
 // Ensure map is initialized and wishlists are displayed when DOM is ready,
 // but only if the 'map' element exists on the page.
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('map')) {
-        // initMap will be called by Google Maps API script, which then calls displayWishlistsOnMap
-        // No explicit call here needed for map display if initMap is the callback
-    }
+    // initMap is called as a callback by the Google Maps API script directly,
+    // so no explicit call here is needed if 'map' element exists.
 });
