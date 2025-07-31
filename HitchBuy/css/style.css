@@ -22,7 +22,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Prevent navbar from shrinking */
     
     position: fixed; /* 將 Navbar 從正常的文檔流中移除，並相對於視窗固定定位 */
     top: 0;          /* 固定在視窗頂部 */
@@ -43,11 +43,9 @@ html, body {
 .navbar .nav-group {
     display: flex;
     align-items: center;
-    /* 確保 nav-group 不會超出，必要時允許項目換行或溢出隱藏 */
     flex-wrap: nowrap; /* 預設不換行 */
     overflow-x: hidden; /* 防止內容溢出 */
-    /* 設置一個最大寬度或給 flex-grow: 1; 讓其彈性縮小 */
-    flex-grow: 1;
+    flex-grow: 1; /* 讓其彈性縮小 */
     justify-content: flex-end; /* 將內容推向右側 */
 }
 
@@ -99,7 +97,6 @@ body {
 .main-content {
     display: flex;
     flex-grow: 1; /* Allow main content to take remaining height */
-    /* 設置外邊距，為地圖的圓角邊緣留出空間 */
     margin: 15px; /* 為地圖留出邊界，並確保內容與 Navbar 底部對齊 */
     overflow: hidden; /* 確保內容不會溢出主容器，特別是地圖圓角 */
     border-radius: 15px; /* 為整個內容區域增加圓角，與地圖邊角保持一致 */
@@ -122,7 +119,8 @@ body {
 #map {
     flex: 3; /* 右側地圖佔 3 份的彈性空間 (約 30%) */
     /* 高度填滿用戶網頁頁面的高（考慮到 margin 和 padding-top）*/
-    height: calc(100vh - 60px - 30px); /* 100vh - Navbar高度 - main-content的上下margin */
+    /* 使用 100% 配合 flex-grow: 1; 在父容器 flex-direction: row; 時，會自動拉伸高度 */
+    height: 100%; /* 讓地圖高度自動填滿 main-content 的高度 */
     background-color: #e0e0e0;
     /* 圓弧邊角 */
     border-top-right-radius: 15px;
@@ -135,14 +133,13 @@ body {
 /* Hero Section (左上區塊) - 自動適應高度，填充寬度 */
 .hero-section {
     background-image: url('../img/background-image.jpg'); /* 請確認圖片路徑 */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    /* 移除固定的百分比 padding，改用更彈性的 min-height 和 justify-content */
-    /* padding: 10% 5%; */ /* 移除或調整為較小固定值 */
-    padding: 40px 20px; /* 給一個基本的內邊距 */
+    background-size: cover; /* 圖片覆蓋整個容器 */
+    background-position: center; /* 圖片居中 */
+    color: white; /* 文字顏色以配合深色背景 */
+    /* padding 保持彈性，確保內容能撐開高度 */
+    padding: 10% 5%; /* 使用百分比 padding 配合彈性內容來填充高度 */
     
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* 確保與 how-it-works 區塊的間距 */
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -150,21 +147,21 @@ body {
     flex-direction: column;
     justify-content: center; /* 垂直居中內容 */
     align-items: center;
-    text-align: center;
+    text-align: center; /* 確保內部文字居中 */
     
-    /* 確保高度能夠根據內容自適應，移除 min-height */
-    min-height: auto; /* 重置最小高度 */
-    height: auto; /* 確保高度根據內容調整 */
+    /* 確保高度能夠根據內容自適應，不限制最小高度 */
+    min-height: auto; 
+    height: auto; 
 }
 
 .hero-section h1 {
-    font-size: clamp(1.8em, 4vw, 2.8em);
+    font-size: clamp(1.8em, 4vw, 2.8em); 
     color: white;
     margin-bottom: 15px;
     animation: none; 
 }
 .hero-section p {
-    font-size: clamp(0.9em, 2vw, 1.1em);
+    font-size: clamp(0.9em, 2vw, 1.1em); 
     color: #eee;
     margin-bottom: 30px;
     max-width: 600px;
@@ -205,7 +202,7 @@ body {
 .how-it-works {
     margin-top: 40px;
     padding-bottom: 20px; 
-    flex-grow: 1; 
+    flex-grow: 1; /* 讓 how-it-works 區塊在 left-panel 中佔據剩餘空間 */
     display: flex; 
     flex-direction: column; 
 }
@@ -220,8 +217,10 @@ body {
     flex-wrap: wrap; 
     gap: 20px; 
     justify-content: center; 
-    flex-grow: 1; 
-    align-content: flex-start; 
+    flex-grow: 1; /* 讓卡片容器佔據 how-it-works 的剩餘空間 */
+    align-content: flex-start; /* 讓多行內容從頂部開始對齊 */
+    /* 確保卡片填滿 available space,而不是被限制 */
+    width: 100%; 
 }
 
 .work-card {
@@ -376,7 +375,7 @@ input[type="number"]::-webkit-inner-spin-button {
         min-height: auto; /* 確保高度仍然自適應 */
     }
     .hero-buttons {
-        gap: 15px;
+        gap: 15px; /* 按鈕間距稍微縮小 */
     }
     .hero-buttons .btn {
         min-width: unset; 
