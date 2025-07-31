@@ -1,22 +1,16 @@
 /* style.css */
 
 /* Global Styles */
-body {
-    font-family: 'Instrument Sans', sans-serif;
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%; /* Ensure html and body take full viewport height */
+    font-family: 'Instrument Sans', sans-serif; /* 已更新字體 */
     background-color: #f4f7f6; /* Light grey background */
     color: #333;
     line-height: 1.6;
-    display: flex; /* Use flexbox for overall layout */
+    display: flex; /* Flexbox for overall layout */
     flex-direction: column; /* Stack navbar on top of main content */
-    min-height: 100vh; /* Ensure full viewport height */
-}
-
-.container {
-    max-width: 1200px; /* 控制內容最大寬度 */
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* Navbar Styles */
@@ -30,11 +24,11 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     flex-shrink: 0; 
     
-    /* 添加以下屬性使 Navbar 懸浮 */
     position: fixed; /* 將 Navbar 從正常的文檔流中移除，並相對於視窗固定定位 */
     top: 0;          /* 固定在視窗頂部 */
     left: 0;         /* 固定在視窗左側 */
     width: 100%;     /* 讓 Navbar 佔滿整個視窗寬度 */
+    box-sizing: border-box; /* 確保 padding 不會導致寬度超出 100% */
     z-index: 1000;   /* 設置一個較高的 z-index 值，確保它在其他內容之上 */
 }
 
@@ -43,12 +37,18 @@ body {
     font-weight: bold;
     color: #4CAF50; /* HitchBuy brand green */
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 20px; /* 給予右邊一些間距 */
 }
 
 .navbar .nav-group {
     display: flex;
     align-items: center;
+    /* 確保 nav-group 不會超出，必要時允許項目換行或溢出隱藏 */
+    flex-wrap: nowrap; /* 預設不換行 */
+    overflow-x: hidden; /* 防止內容溢出 */
+    /* 設置一個最大寬度或給 flex-grow: 1; 讓其彈性縮小 */
+    flex-grow: 1;
+    justify-content: flex-end; /* 將內容推向右側 */
 }
 
 .navbar .nav-group .lang-currency {
@@ -58,6 +58,7 @@ body {
     padding: 5px 10px;
     border: 1px solid #eee;
     border-radius: 5px;
+    white-space: nowrap; /* 防止文字換行 */
 }
 
 .navbar .nav-links a {
@@ -66,6 +67,7 @@ body {
     margin-left: 25px;
     font-weight: bold;
     transition: color 0.3s ease;
+    white-space: nowrap; /* 防止文字換行 */
 }
 
 .navbar .nav-links a:hover {
@@ -84,14 +86,23 @@ body {
     font-weight: bold;
     color: #666;
     cursor: pointer;
+    flex-shrink: 0; /* 防止頭像縮小 */
 }
+
+/* 處理固定 Navbar 遮擋內容的問題 */
+body {
+    padding-top: 60px; /* 根據您的 Navbar 實際高度調整此值，Navbar 約 58px 高 */
+}
+
 
 /* Main Content Area Layout - 使用 Flexbox 實現左右兩欄的彈性佈局 */
 .main-content {
     display: flex;
     flex-grow: 1; /* Allow main content to take remaining height */
-    margin-top: 60px;
-    /* 預設為左右並排，地圖佔比更大 */
+    /* 設置外邊距，為地圖的圓角邊緣留出空間 */
+    margin: 15px; /* 為地圖留出邊界，並確保內容與 Navbar 底部對齊 */
+    overflow: hidden; /* 確保內容不會溢出主容器，特別是地圖圓角 */
+    border-radius: 15px; /* 為整個內容區域增加圓角，與地圖邊角保持一致 */
 }
 
 .left-panel {
@@ -100,17 +111,26 @@ body {
     width: 100%; /* 確保在flex item中能佔據可用空間 */
     padding: 40px; /* 內邊距保持相對固定 */
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 在左側面板也添加陰影 */
     overflow-y: auto; /* 允許內容垂直滾動 */
     display: flex;
     flex-direction: column; /* 左側面板內的元素垂直堆疊 */
+    border-top-left-radius: 15px; /* 左側面板頂部和底部的圓角 */
+    border-bottom-left-radius: 15px;
 }
 
 #map {
     flex: 3; /* 右側地圖佔 3 份的彈性空間 (約 30%) */
-    min-height: 50vh; /* 給地圖一個基於視窗高度的最小高度 */
+    /* 高度填滿用戶網頁頁面的高（考慮到 margin 和 padding-top）*/
+    height: calc(100vh - 60px - 30px); /* 100vh - Navbar高度 - main-content的上下margin */
     background-color: #e0e0e0;
+    /* 圓弧邊角 */
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden; /* 確保地圖內容在圓角內部 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 為地圖添加陰影 */
 }
+
 
 /* Hero Section (左上區塊) - 圖片背景和內容的彈性調整 */
 .hero-section {
@@ -135,7 +155,6 @@ body {
     font-size: clamp(1.8em, 4vw, 2.8em); /* 使用 clamp 函數實現響應式字體大小 */
     color: white;
     margin-bottom: 15px;
-    /* 移除動畫，或在實際開發中再添加 */
     animation: none; 
 }
 .hero-section p {
@@ -180,6 +199,9 @@ body {
 .how-it-works {
     margin-top: 40px;
     padding-bottom: 20px; /* 底部填充 */
+    flex-grow: 1; /* 讓 how-it-works 區塊在左側面板中佔據剩餘空間 */
+    display: flex; /* 內部使用 flex 佈局 */
+    flex-direction: column; /* 內部內容垂直堆疊 */
 }
 .how-it-works h2 {
     font-size: 1.8em;
@@ -192,12 +214,12 @@ body {
     flex-wrap: wrap; /* 允許卡片換行 */
     gap: 20px; /* 卡片之間的間距，與設計圖中的 Gap 20px 匹配 */
     justify-content: center; /* 讓卡片在容器中居中 */
+    flex-grow: 1; /* 讓卡片容器佔據 how-it-works 的剩餘空間 */
+    align-content: flex-start; /* 讓多行內容從頂部開始對齊 */
 }
 
 .work-card {
     background-color: #f9f9f9;
-    /* 這裡使用 flex-basis 配合 calc() 實現彈性寬度 */
-    /* 目標是讓它們在大螢幕上兩兩並排，並隨螢幕縮小 */
     flex-basis: calc(50% - 10px); /* 兩欄佈局，扣除一半的 gap (20px / 2 = 10px) */
     max-width: 337px; /* 但不超過設計圖中的最大寬度 */
     min-height: 212px; /* 最小高度，確保內容少時也有足夠高度 */
@@ -206,6 +228,8 @@ body {
     text-align: left;
     padding: 22px 28px; /* 上下 22px, 左右 28px，與設計圖 Padding 匹配 */
     box-sizing: border-box; /* 確保 padding 不會增加總寬度，這很重要 */
+    display: flex; /* 讓卡片內部內容也使用 flex */
+    flex-direction: column; /* 內部內容垂直堆疊 */
 }
 .work-card h3 {
     color: #007bff;
@@ -323,16 +347,21 @@ input[type="number"]::-webkit-inner-spin-button {
     /* 在中等螢幕（例如平板橫向）下，左右兩欄變成垂直堆疊 */
     .main-content {
         flex-direction: column;
+        margin: 0; /* 在小螢幕時移除 main-content 的外邊距 */
+        border-radius: 0; /* 移除圓角 */
     }
     .left-panel {
         order: 2; /* 讓左側面板在地圖下方 */
         max-width: 100%; /* 佔據所有可用寬度 */
         padding: 30px; /* 調整內邊距 */
+        border-radius: 0; /* 移除圓角 */
     }
     #map {
         flex: none; /* 取消 flex 比例 */
         height: 50vh; /* 設定一個基於視窗高度的地圖高度 */
         order: 1; /* 讓地圖在左側面板上方 */
+        margin: 0; /* 移除外邊距 */
+        border-radius: 0; /* 移除圓角 */
     }
     .hero-section {
         padding: 8% 4%; /* 進一步調整 padding */
