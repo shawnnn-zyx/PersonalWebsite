@@ -11,7 +11,10 @@ html, body {
     line-height: 1.6;
     display: flex; /* Flexbox for overall layout */
     flex-direction: column; /* Stack navbar on top of main content */
+    /* 處理固定 Navbar 遮擋內容的問題 */
+    padding-top: 60px; /* 根據您的 Navbar 實際高度調整此值，Navbar 約 58px 高 */
 }
+
 
 /* Navbar Styles */
 .navbar {
@@ -87,11 +90,6 @@ html, body {
     flex-shrink: 0; /* 防止頭像縮小 */
 }
 
-/* 處理固定 Navbar 遮擋內容的問題 */
-body {
-    padding-top: 60px; /* 根據您的 Navbar 實際高度調整此值，Navbar 約 58px 高 */
-}
-
 
 /* Main Content Area Layout - 使用 Flexbox 實現左右兩欄的彈性佈局 */
 .main-content {
@@ -109,17 +107,18 @@ body {
     padding: 40px; /* 內邊距保持相對固定 */
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 在左側面板也添加陰影 */
-    overflow-y: auto; /* 允許內容垂直滾動 */
+    /* 移除 overflow-y: auto; 讓 hero-section 可以正確撐開高度 */
+    /* overflow-y: auto; */ 
     display: flex;
     flex-direction: column; /* 左側面板內的元素垂直堆疊 */
     border-top-left-radius: 15px; /* 左側面板頂部和底部的圓角 */
     border-bottom-left-radius: 15px;
+    /* 確保 left-panel 的高度能夠自動計算 */
+    min-height: calc(100vh - 60px - 30px); /* 讓 left-panel 至少和地圖一樣高 */
 }
 
 #map {
     flex: 3; /* 右側地圖佔 3 份的彈性空間 (約 30%) */
-    /* 高度填滿用戶網頁頁面的高（考慮到 margin 和 padding-top）*/
-    /* 使用 100% 配合 flex-grow: 1; 在父容器 flex-direction: row; 時，會自動拉伸高度 */
     height: 100%; /* 讓地圖高度自動填滿 main-content 的高度 */
     background-color: #e0e0e0;
     /* 圓弧邊角 */
@@ -136,8 +135,10 @@ body {
     background-size: cover; /* 圖片覆蓋整個容器 */
     background-position: center; /* 圖片居中 */
     color: white; /* 文字顏色以配合深色背景 */
-    /* padding 保持彈性，確保內容能撐開高度 */
-    padding: 10% 5%; /* 使用百分比 padding 配合彈性內容來填充高度 */
+    
+    /* 調整 padding，確保內容有足夠空間，並幫助撐開高度 */
+    /* 使用 em 或 rem 單位，讓 padding 隨著字體大小變化，更具響應性 */
+    padding: 3em 1em; /* 調整為更合適的內邊距，例如上下 3em 左右 1em */
     
     margin-bottom: 40px; /* 確保與 how-it-works 區塊的間距 */
     border-radius: 10px;
@@ -152,6 +153,8 @@ body {
     /* 確保高度能夠根據內容自適應，不限制最小高度 */
     min-height: auto; 
     height: auto; 
+    /* 增加一個 flex-shrink 屬性，防止在極端情況下被過度壓縮 */
+    flex-shrink: 0;
 }
 
 .hero-section h1 {
@@ -205,6 +208,9 @@ body {
     flex-grow: 1; /* 讓 how-it-works 區塊在 left-panel 中佔據剩餘空間 */
     display: flex; 
     flex-direction: column; 
+    /* 確保其內容能夠填滿 left-panel 的寬度 */
+    width: 100%; 
+    box-sizing: border-box; /* 確保 padding 不會導致內容溢出 */
 }
 .how-it-works h2 {
     font-size: 1.8em;
@@ -216,19 +222,22 @@ body {
     display: flex;
     flex-wrap: wrap; 
     gap: 20px; 
-    justify-content: center; 
+    /* 移除 justify-content: center; 讓卡片從左側開始排列，填滿空間 */
+    /* justify-content: center; */ 
     flex-grow: 1; /* 讓卡片容器佔據 how-it-works 的剩餘空間 */
     align-content: flex-start; /* 讓多行內容從頂部開始對齊 */
-    /* 確保卡片填滿 available space,而不是被限制 */
-    width: 100%; 
+    width: 100%; /* 確保容器填滿 how-it-works 的寬度 */
 }
 
 .work-card {
     background-color: #f9f9f9;
     /* 讓 work-card 自動填充寬度 */
-    flex-basis: calc(50% - 10px); /* 兩欄佈局，扣除一半的 gap */
+    /* 使用 flex: 1; 確保它能充分伸展，並配合 max-width */
+    flex: 1; /* 讓卡片均勻分佈，並填滿可用空間 */
+    min-width: calc(50% - 10px); /* 保持兩欄時的最小寬度 */
     max-width: 337px; /* 仍然保留最大寬度限制 */
-    width: 100%; /* 確保在 flex item 中能盡可能地佔據空間 */
+    /* 移除 width: 100%; 因為 flex: 1; 會自動處理寬度 */
+    /* width: 100%; */ 
     min-height: 212px; 
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.03);
@@ -362,6 +371,7 @@ input[type="number"]::-webkit-inner-spin-button {
         max-width: 100%; /* 佔據所有可用寬度 */
         padding: 30px; /* 調整內邊距 */
         border-radius: 0; /* 移除圓角 */
+        min-height: auto; /* 在垂直佈局時高度自適應 */
     }
     #map {
         flex: none; /* 取消 flex 比例 */
