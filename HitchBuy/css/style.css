@@ -132,59 +132,65 @@ body {
 }
 
 
-/* Hero Section (左上區塊) - 圖片背景和內容的彈性調整 */
+/* Hero Section (左上區塊) - 自動適應高度，填充寬度 */
 .hero-section {
-    /* 請確保您的圖片路徑正確。如果圖片在 HitchBuy_Project/img/background-image.jpg，則路徑應是 url('../img/background-image.jpg') */
-    background-image: url('../img/background-image.jpg'); 
-    background-size: cover; /* 圖片覆蓋整個容器 */
-    background-position: center; /* 圖片居中 */
-    color: white; /* 文字顏色以配合深色背景 */
-    padding: 10% 5%; /* 使用百分比內邊距，使其隨寬度調整 */
+    background-image: url('../img/background-image.jpg'); /* 請確認圖片路徑 */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    /* 移除固定的百分比 padding，改用更彈性的 min-height 和 justify-content */
+    /* padding: 10% 5%; */ /* 移除或調整為較小固定值 */
+    padding: 40px 20px; /* 給一個基本的內邊距 */
+    
     margin-bottom: 40px;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* 垂直居中內容 */
     align-items: center;
-    text-align: center; /* 確保內部文字居中 */
+    text-align: center;
+    
+    /* 確保高度能夠根據內容自適應，移除 min-height */
+    min-height: auto; /* 重置最小高度 */
+    height: auto; /* 確保高度根據內容調整 */
 }
 
 .hero-section h1 {
-    font-size: clamp(1.8em, 4vw, 2.8em); /* 使用 clamp 函數實現響應式字體大小 */
+    font-size: clamp(1.8em, 4vw, 2.8em);
     color: white;
     margin-bottom: 15px;
     animation: none; 
 }
 .hero-section p {
-    font-size: clamp(0.9em, 2vw, 1.1em); /* 響應式字體大小 */
+    font-size: clamp(0.9em, 2vw, 1.1em);
     color: #eee;
     margin-bottom: 30px;
-    max-width: 600px; /* 防止文字在一行過長 */
+    max-width: 600px;
 }
 .hero-buttons {
     display: flex;
-    flex-wrap: wrap; /* 允許按鈕換行 */
-    gap: 20px; /* 按鈕間距 */
-    justify-content: center; /* 按鈕組水平居中 */
-    width: 100%; /* 確保按鈕組能佔滿父容器寬度 */
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    width: 100%; 
 }
 .hero-buttons .btn {
-    padding: 10px 20px; /* 上下 10px，左右 20px，與設計圖 padding 匹配 */
-    font-size: clamp(0.9em, 2vw, 1.2em); /* 響應式字體大小 */
-    border-radius: 30px; /* 更大的圓角使其接近橢圓形 */
-    background-color: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
+    padding: 10px 20px; 
+    font-size: clamp(0.9em, 2vw, 1.2em); 
+    border-radius: 30px; 
+    background-color: rgba(255, 255, 255, 0.2); 
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* 半透明白色邊框 */
-    backdrop-filter: blur(5px); /* 輕微的模糊效果 */
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(5px); 
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 150px; /* 設定最小寬度，防止按鈕過小 */
+    min-width: 150px; 
     flex: 1; /* 讓按鈕在一定範圍內彈性伸縮 */
-    max-width: 200px; /* 限制單個按鈕最大寬度 */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* 添加過渡效果 */
+    max-width: 200px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 .hero-buttons .btn:hover {
     background-color: rgba(255, 255, 255, 0.4);
@@ -198,10 +204,10 @@ body {
 /* How It Works Section (左下區塊) - 彈性卡片佈局 */
 .how-it-works {
     margin-top: 40px;
-    padding-bottom: 20px; /* 底部填充 */
-    flex-grow: 1; /* 讓 how-it-works 區塊在左側面板中佔據剩餘空間 */
-    display: flex; /* 內部使用 flex 佈局 */
-    flex-direction: column; /* 內部內容垂直堆疊 */
+    padding-bottom: 20px; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column; 
 }
 .how-it-works h2 {
     font-size: 1.8em;
@@ -211,25 +217,27 @@ body {
 }
 .how-it-works-cards {
     display: flex;
-    flex-wrap: wrap; /* 允許卡片換行 */
-    gap: 20px; /* 卡片之間的間距，與設計圖中的 Gap 20px 匹配 */
-    justify-content: center; /* 讓卡片在容器中居中 */
-    flex-grow: 1; /* 讓卡片容器佔據 how-it-works 的剩餘空間 */
-    align-content: flex-start; /* 讓多行內容從頂部開始對齊 */
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    flex-grow: 1; 
+    align-content: flex-start; 
 }
 
 .work-card {
     background-color: #f9f9f9;
-    flex-basis: calc(50% - 10px); /* 兩欄佈局，扣除一半的 gap (20px / 2 = 10px) */
-    max-width: 337px; /* 但不超過設計圖中的最大寬度 */
-    min-height: 212px; /* 最小高度，確保內容少時也有足夠高度 */
+    /* 讓 work-card 自動填充寬度 */
+    flex-basis: calc(50% - 10px); /* 兩欄佈局，扣除一半的 gap */
+    max-width: 337px; /* 仍然保留最大寬度限制 */
+    width: 100%; /* 確保在 flex item 中能盡可能地佔據空間 */
+    min-height: 212px; 
     border-radius: 8px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.03);
     text-align: left;
-    padding: 22px 28px; /* 上下 22px, 左右 28px，與設計圖 Padding 匹配 */
-    box-sizing: border-box; /* 確保 padding 不會增加總寬度，這很重要 */
-    display: flex; /* 讓卡片內部內容也使用 flex */
-    flex-direction: column; /* 內部內容垂直堆疊 */
+    padding: 22px 28px; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
 }
 .work-card h3 {
     color: #007bff;
@@ -364,21 +372,22 @@ input[type="number"]::-webkit-inner-spin-button {
         border-radius: 0; /* 移除圓角 */
     }
     .hero-section {
-        padding: 8% 4%; /* 進一步調整 padding */
-        min-height: 200px;
+        padding: 6% 4%; /* 在中等螢幕下調整 padding 比例 */
+        min-height: auto; /* 確保高度仍然自適應 */
     }
     .hero-buttons {
-        gap: 15px; /* 按鈕間距稍微縮小 */
+        gap: 15px;
     }
     .hero-buttons .btn {
-        min-width: unset; /* 取消最小寬度，讓按鈕更自由伸縮 */
-        flex: 1 1 auto; /* 自動調整大小 */
+        min-width: unset; 
+        flex: 1 1 auto; 
     }
     .how-it-works-cards {
-        gap: 15px; /* 卡片間距稍微縮小 */
+        gap: 15px; 
     }
     .work-card {
         flex-basis: calc(50% - 7.5px); /* 在中等螢幕下，調整 gap 考慮 */
+        max-width: none; /* 移除 max-width 讓它們在 50% 時完全彈性 */
     }
 }
 
@@ -388,22 +397,22 @@ input[type="number"]::-webkit-inner-spin-button {
         padding: 20px; /* 減小內邊距 */
     }
     .hero-section {
-        padding: 10% 5%; /* 手機上可能需要更大比例的 padding */
+        padding: 8% 5%; /* 手機上可能需要更大比例的 padding */
     }
     .hero-buttons {
-        flex-direction: column; /* 手機上按鈕垂直堆疊 */
-        gap: 10px; /* 間距更小 */
+        flex-direction: column; 
+        gap: 10px; 
     }
     .hero-buttons .btn {
-        width: 100%; /* 手機上按鈕佔滿寬度 */
-        max-width: none; /* 移除最大寬度限制 */
+        width: 100%; 
+        max-width: none; 
     }
     .how-it-works-cards {
-        flex-direction: column; /* 卡片垂直堆疊 */
+        flex-direction: column; 
         gap: 15px;
     }
     .work-card {
-        flex-basis: 100%; /* 卡片佔滿寬度 */
-        max-width: none; /* 移除最大寬度限制 */
+        flex-basis: 100%; 
+        max-width: none; 
     }
 }
