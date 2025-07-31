@@ -2,7 +2,7 @@
 
 /* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Instrument Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f7f6; /* Light grey background */
@@ -28,7 +28,14 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    flex-shrink: 0; /* Prevent navbar from shrinking */
+    flex-shrink: 0; 
+    
+    /* 添加以下屬性使 Navbar 懸浮 */
+    position: fixed; /* 將 Navbar 從正常的文檔流中移除，並相對於視窗固定定位 */
+    top: 0;          /* 固定在視窗頂部 */
+    left: 0;         /* 固定在視窗左側 */
+    width: 100%;     /* 讓 Navbar 佔滿整個視窗寬度 */
+    z-index: 1000;   /* 設置一個較高的 z-index 值，確保它在其他內容之上 */
 }
 
 .navbar .logo {
@@ -83,12 +90,13 @@ body {
 .main-content {
     display: flex;
     flex-grow: 1; /* Allow main content to take remaining height */
+    margin-top: 60px;
     /* 預設為左右並排，地圖佔比更大 */
 }
 
 .left-panel {
-    flex: 1; /* 左側面板佔 1 份的彈性空間 */
-    max-width: 600px; /* 設定最大寬度，防止在大螢幕上過寬 */
+    flex: 7; /* 左側面板佔 7 份的彈性空間 (約 70%) */
+    max-width: 70%; /* 設定最大寬度為 70% */
     width: 100%; /* 確保在flex item中能佔據可用空間 */
     padding: 40px; /* 內邊距保持相對固定 */
     background-color: #fff;
@@ -99,11 +107,10 @@ body {
 }
 
 #map {
-    flex: 2; /* 右側地圖佔 2 份的彈性空間，讓地圖比左側寬一倍 */
-    min-height: 50vh; /* 給地圖一個基於視窗高度的最小高度，使其在載入時就有足夠高度 */
+    flex: 3; /* 右側地圖佔 3 份的彈性空間 (約 30%) */
+    min-height: 50vh; /* 給地圖一個基於視窗高度的最小高度 */
     background-color: #e0e0e0;
 }
-
 
 /* Hero Section (左上區塊) - 圖片背景和內容的彈性調整 */
 .hero-section {
