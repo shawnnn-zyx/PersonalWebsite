@@ -91,19 +91,25 @@ html, body {
 }
 
 
-/* Main Content Area Layout - 使用 Flexbox 實現左右兩欄的彈性佈局 */
+/* Main Content Area Layout - 參考您提供的 60%/40% 固定比例佈局 */
 .main-content {
     display: flex;
     flex-grow: 1; /* Allow main content to take remaining height */
     margin: 15px; /* 為地圖留出邊界，並確保內容與 Navbar 底部對齊 */
     overflow: hidden; /* 確保內容不會溢出主容器，特別是地圖圓角 */
     border-radius: 15px; /* 為整個內容區域增加圓角，與地圖邊角保持一致 */
+    
+    /* 確保 main-content 本身有足夠的最小高度來容納子元素 */
+    min-height: calc(100vh - 60px - 30px); /* 100vh - Navbar高度 - main-content的上下margin */
 }
 
 .left-panel {
-    flex: 7; /* 左側面板佔 7 份的彈性空間 (約 70%) */
-    max-width: 70%; /* 設定最大寬度為 70% */
-    width: 100%; /* 確保在flex item中能佔據可用空間 */
+    /* 設置固定比例的寬度 */
+    flex: none; /* 移除彈性，改用固定寬度 */
+    width: 60%; /* 佔 60% 寬度 */
+    min-width: 60%; /* 最小寬度為 60% */
+    max-width: 60%; /* 最大寬度為 60% */
+
     padding: 40px; /* 內邊距保持相對固定 */
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 在左側面板也添加陰影 */
@@ -114,11 +120,17 @@ html, body {
     border-top-left-radius: 15px; /* 左側面板頂部和底部的圓角 */
     border-bottom-left-radius: 15px;
     /* 確保 left-panel 的高度能夠自動計算 */
-    min-height: calc(100vh - 60px - 30px); /* 讓 left-panel 至少和地圖一樣高 */
+    height: 100%; /* 讓 left-panel 填滿 main-content 的高度 */
+    overflow-y: auto; /* 如果內容可能溢出，再次啟用滾動條 */
 }
 
 #map {
-    flex: 3; /* 右側地圖佔 3 份的彈性空間 (約 30%) */
+    /* 設置固定比例的寬度 */
+    flex: none; /* 移除彈性，改用固定寬度 */
+    width: 40%; /* 佔 40% 寬度 */
+    min-width: 40%; /* 最小寬度為 40% */
+    max-width: 40%; /* 最大寬度為 40% */
+
     height: 100%; /* 讓地圖高度自動填滿 main-content 的高度 */
     background-color: #e0e0e0;
     /* 圓弧邊角 */
@@ -127,6 +139,7 @@ html, body {
     overflow: hidden; /* 確保地圖內容在圓角內部 */
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 為地圖添加陰影 */
 }
+
 
 
 /* Hero Section (左上區塊) - 自動適應高度，填充寬度 */
@@ -365,9 +378,12 @@ input[type="number"]::-webkit-inner-spin-button {
         flex-direction: column;
         margin: 0; /* 在小螢幕時移除 main-content 的外邊距 */
         border-radius: 0; /* 移除圓角 */
+        min-height: auto; /* 垂直堆疊時高度自適應 */
     }
     .left-panel {
         order: 2; /* 讓左側面板在地圖下方 */
+        flex: none; /* 移除固定比例，讓其在垂直佈局時彈性 */
+        width: 100%; /* 佔據所有可用寬度 */
         max-width: 100%; /* 佔據所有可用寬度 */
         padding: 30px; /* 調整內邊距 */
         border-radius: 0; /* 移除圓角 */
@@ -375,6 +391,8 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     #map {
         flex: none; /* 取消 flex 比例 */
+        width: 100%; /* 佔據所有可用寬度 */
+        max-width: 100%; /* 佔據所有可用寬度 */
         height: 50vh; /* 設定一個基於視窗高度的地圖高度 */
         order: 1; /* 讓地圖在左側面板上方 */
         margin: 0; /* 移除外邊距 */
