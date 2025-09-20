@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HitchBuy - Filter Brick</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="page-body-content" style="padding: 20px;">
+        <div class="content-left-section">
+
+            <div class="filter-section">
+                <h2>Find a Quest</h2>
+                <div class="form-group">
+                    <input type="text" id="destinationFilter" placeholder="Destination" list="hotCities">
+                    <datalist id="hotCities">
+                        <option value="Tokyo, Japan">
+                        <option value="New York, USA">
+                    </datalist>
+                </div>
+                <div class="form-group date-inputs">
+                    <input type="date" id="arrivalDate">
+                    <input type="date" id="departureDate">
+                </div>
+                <button id="filterButton" class="btn btn-primary btn-sm">Search Quests</button>
+                <button id="resetButton" class="btn btn-secondary btn-sm">Reset</button>
+            </div>
+            
+            <section id="questList" class="quest-board"></section>
+        </div>
+    </div>
+
+    <script src="js/brick_1_filter.js"></script>
+</body>
+</html>
