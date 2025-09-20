@@ -13,26 +13,31 @@
     <!-- Navbar Region -->
     <nav class="navbar">
         <a href="index.html" class="logo">HitchBuy</a>
+
+        <div class="filter-section">
+            <div class="form-group">
+                <input type="text" id="destinationFilter" placeholder="Destination">
+            </div>
+            <div class="form-group date-inputs">
+                <input type="date" id="arrivalDate">
+                <input type="date" id="departureDate">
+            </div>
+            <button id="filterButton" class="btn btn-primary btn-sm">Filter</button>
+            <button id="resetButton" class="btn btn-secondary btn-sm">Reset</button>
+        </div>
+
         <div class="nav-group">
-            <span class="lang-currency">English/USD</span>
             <div class="nav-links">
                 <a href="#">Wish</a>
                 <a href="#">Earn</a>
                 <a href="#">Chat</a>
             </div>
-            <div class="user-avatar">JD</div> </div>
+            <div class="user-avatar">SW</div> </div>
     </nav>
 
     <div class="page-body-content"> 
         <div class="content-left-section"> 
-            <header class="hero-section">
-                <h1>Your Wish, A Traveler's Mission.</h1>
-                <p>HitchBuy connects global shoppers with travelers, making cross-border purchases effortless while helping travelers earn extra income!</p>
-                <div class="hero-buttons">
-                    <a href="make-wish-step1.html" class="btn btn-primary">Make a Wish</a>
-                    <a href="browse.html" class="btn btn-secondary">Easy Earn</a>
-                </div>
-            </header>
+            <section id="questList" class="quest-board"></section>
 
             <section class="how-it-works">
                 <h2>How HitchBuy Works</h2>

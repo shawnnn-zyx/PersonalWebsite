@@ -257,3 +257,60 @@ document.addEventListener('DOMContentLoaded', () => {
     // initMap is called as a callback by the Google Maps API script directly,
     // so no explicit call here is needed if 'map' element exists.
 });
+
+
+function timeSince(date) {
+    const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+    let interval = seconds / 31536000;
+    if (interval > 1) { return Math.floor(interval) + " years ago"; }
+    interval = seconds / 2592000;
+    if (interval > 1) { return Math.floor(interval) + " months ago"; }
+    interval = seconds / 86400;
+    if (interval > 1) { return Math.floor(interval) + " days ago"; }
+    interval = seconds / 3600;
+    if (interval > 1) { return Math.floor(interval) + " hours ago"; }
+    interval = seconds / 60;
+    if (interval > 1) { return Math.floor(interval) + " minutes ago"; }
+    return "just now";
+}
+
+// 渲染任務列表 (新版本)
+function renderQuestList(quests) {
+    const questListContainer = document.getElementById('questList');
+    if (!questListContainer) return;
+
+    questListContainer.innerHTML = '';
+    if (quests.length === 0) {
+        questListContainer.innerHTML = '<p style="text-align: center; color: #777; margin-top: 50px;">No quests found for your filters.</p>';
+        return;
+    }
+
+    quests.forEach(quest => {
+        const questCard = document.createElement('div');
+        questCard.className = 'quest-card';
+
+        // 隨機生成一個圖片來模擬
+        const imageUrl = quest.imageUrl || `https://picsum.photos/300/200?random=${quest.id}`;
+        
+        // 確保你有 deliveryDate 屬性
+        const deliveryDate = quest.deliveryDate || 'N/A';
+
+        questCard.innerHTML = `
+            <div class="quest-card-image" style="background-image: url('${imageUrl}');">
+                <span class="reward-tag">Earn $${quest.potentialProfit}</span>
+                <span class="delivery-date">Deliver by ${deliveryDate}</span>
+            </div>
+            <div class="quest-card-content">
+                <span class="quest-title">${quest.itemName}</span>
+                <span class="posted-time">Posted ${timeSince(quest.timestamp)}</span>
+            </div>
+        `;
+
+        questCard.addEventListener('click', () => {
+            if (map) {
+                map.panTo(new google.maps.LatLng(quest.coords.lat, quest.coords.lng));
+            }
+        });
+        questListContainer.appendChild(questCard);
+    });
+}

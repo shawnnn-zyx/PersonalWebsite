@@ -367,6 +367,82 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
+/* style.css */
+
+/* 任務看板容器 */
+.quest-board {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 自動響應式佈局 */
+    padding-top: 20px;
+}
+
+/* 任務卡片樣式 */
+.quest-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.quest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.quest-card-image {
+    width: 100%;
+    height: 180px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.quest-card-image .reward-tag {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.quest-card-image .delivery-date {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.quest-card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.quest-card-content .quest-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.quest-card-content .posted-time {
+    font-size: 0.8em;
+    color: #999;
+}
+
 
 /* 響應式設計 - 媒體查詢調整佈局 */
 @media (max-width: 992px) {
